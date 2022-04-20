@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.title{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.up{
+    position: fixed;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.down{
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.left{
+    position: fixed;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.right{
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%, -50%);
+}
