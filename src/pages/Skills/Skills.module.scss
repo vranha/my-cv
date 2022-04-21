@@ -52,5 +52,52 @@
   }
 
 .center{
-   
+   position: relative;
+   bottom: 190px;
+   right: 180px;
+
+   h1{
+       font-size:40px;
+       font-weight: 700;
+   }
+   .containerBasics {
+
+    margin:30px;
+
+    .basicsHtml{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.301);
+        position: relative;
+        top: 130px;
+    }
+    .basicsCss{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.301);
+        
+    }
+    
+    .basicsJs{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        outline: 4px solid white;
+        outline-offset: -4px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.301);
+        position: relative;
+        top: 130px;
+    }
+   }
 }
