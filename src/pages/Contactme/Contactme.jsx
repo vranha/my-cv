@@ -8,6 +8,33 @@ const animations = {
     exit:{  y:"-100%"},
 
 }
+const base = {
+    initial:{  scale: 0},
+    animate:{  scale: 1},
+    exit:{  scale: 0},
+
+}
+const children = {
+    initial:{  scale: 0},
+    animate:{  scale: 1},
+    exit:{  scale: 0},
+
+}
+const pageTransition = {
+    type: "spring",
+    ease: "easeIn",
+    bounce: 0,
+    damping: 15,
+    duration: 1
+}
+const childTransition = {
+    type: "tween",
+    bounce: 0.5,
+    duration: .2,
+    delay:.1,
+    delayChildren: 0.5,
+    staggerChildren: 0.3
+}
 
 export default function Contactme({exitY, cycleExitY  }) {
 
@@ -19,11 +46,11 @@ export default function Contactme({exitY, cycleExitY  }) {
     }
 
     return (
-        <motion.div className={styles.container} variants={animations} initial="initial" animate="animate" exit="exit" transition={{ duration: 1 }}>
-            <div className={styles.center}>
-                <h1>Contact Me</h1>
-                 <h3 onClick={handleMain}>Main</h3>
-            </div>
+        <motion.div  className={styles.container} variants={animations} initial="initial" animate="animate" exit="exit" transition={pageTransition}>
+            <motion.div className={styles.center} variants={base} initial="initial" animate="animate" exit="exit" transition={childTransition}>
+                <h1>Contact me</h1>
+                 <motion.h3 onClick={handleMain} variants={children}>Main</motion.h3>
+            </motion.div>
         </motion.div>
     );
 }

@@ -1,12 +1,56 @@
 .container{
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
+.container::before {
+    content: "";
+    position: fixed;
+    
+    right: 40%;
+    top:20%;
+    z-index: -1;
+  
+    display: block;
+    background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
+    background-size:cover;
+    transform: scale(1);
+    width: 100%;
+    height: 100vh;
+  
+    -webkit-filter: blur(100px);
+    -moz-filter: blur(100px);
+    -o-filter: blur(100px);
+    -ms-filter: blur(100px);
+    filter: blur(100px) hue-rotate(340deg);
+    opacity: 0.2;
+  }
+
+.container::after {
+    content: "";
+    position: fixed;
+    
+    left: 20%;
+    bottom:10%;
+    z-index: -1;
+  
+    display: block;
+    background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
+    background-size:cover;
+    transform: scale(0.5);
+    width: 100%;
+    height: 100vh;
+  
+    -webkit-filter: blur(100px);
+    -moz-filter: blur(100px);
+    -o-filter: blur(100px);
+    -ms-filter: blur(100px);
+    filter: blur(100px) hue-rotate(240deg);
+    opacity: 0.2;
+  }
+
 .center{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+   
 }

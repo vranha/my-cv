@@ -3,6 +3,13 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Main.module.scss"
 
 
+const pageTransition = {
+    type: "tween",
+    ease: "anticipate",
+    bounce: 0,
+    damping: 15,
+    duration: 1
+}
 
 export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
     const navigate = useNavigate();
@@ -39,7 +46,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
     }
 
     return (
-        <motion.div className={styles.container} initial={{  x:exitPage, y: exitY }} animate={{  x:0, y: 0}} exit={{  x: initialPage, y: initialY}} transition={{ duration: 1 }} >
+        <motion.div className={styles.container} initial={{  x:exitPage, y: exitY }} animate={{  x:0, y: 0}} exit={{  x: initialPage, y: initialY}} transition={pageTransition} >
         <h3 className={styles.up} onClick={() => handleProjects("contactme")}>Contact Me</h3>
         <h3 className={styles.left} onClick={() => handleProjects("skills")}>Skills</h3>
         <h1 className={styles.title}>main</h1>
