@@ -63,8 +63,11 @@ export default function Skills({ exitPage, cycleExitPage }) {
                 exit="exit"
                 transition={childTransition}
             >
-                <h1>Mi developer skills</h1>
+                <h1>Mi developer <strong>skills</strong></h1>
                 <motion.div className={styles.containerBasics} variants={children}>
+                <svg className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
+	<path fill="#74d8c4" d="M293,337.5Q127,435,125,236.5Q123,38,291,139Q459,240,293,337.5Z" />
+</svg>
                     <motion.img
                         className={styles.basicsHtml}
                         whileInView={{
@@ -108,6 +111,7 @@ export default function Skills({ exitPage, cycleExitPage }) {
                 </motion.div>
             </motion.div>
             <motion.h3
+             className={styles.main}
                 onClick={handleMain}
                 variants={base}
                 initial="initial"
