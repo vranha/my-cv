@@ -78,7 +78,7 @@
         background-color: white;
         border-radius: 50%;
         padding: 0px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.301);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
         position: relative;
         top: 130px;
     }
@@ -89,7 +89,7 @@
         background-color: white;
         border-radius: 50%;
         padding: 0px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.301);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
         
     }
     
@@ -102,7 +102,7 @@
         padding: 0px;
         outline: 4px solid white;
         outline-offset: -4px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.301);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
         position: relative;
         top: 130px;
     }
@@ -112,8 +112,131 @@
        position: absolute;
        left: 0px;
        top:-120px;
-       filter:drop-shadow(0 0 20px rgba(0, 0, 0, 0.308)) blur(2px) hue-rotate(100deg) ;
+       filter:drop-shadow(0 0 40px rgba(0, 0, 0, 0.308)) blur(2px) hue-rotate(100deg) ;
    }
+
+
+}
+
+.containerDev {
+
+    position: absolute;
+    top: 100px;
+    left: 350px;
+
+
+    .devReact{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
+        position: relative;
+        top: 0px;
+        right: 0px;
+        border: 4px solid white;
+    }
+
+    .devAngular{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
+        position: relative;
+        top: -20px;
+        left: 110px;
+        border: 4px solid white;
+
+    }
+    .devNode{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
+        position: relative;
+        top: 10px;
+        left: 170px;
+        border: 4px solid white;
+
+    }
+    .devMongo{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
+        position: relative;
+        top: 40px;
+        left: 110px;
+        border: 4px solid white;
+
+    }
+    .devPhp{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
+        position: relative;
+        top: 20px;
+        right: 0px;
+        border: 4px solid white;
+
+    }
+    .devLaravel{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
+        position: relative;
+        top: -127px;
+        right: 110px;
+        border: 4px solid white;
+
+    }
+    .devBootstrap{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
+        position: relative;
+        top: -325px;
+        right: 170px;
+        border: 4px solid white;
+
+    }
+    .devFramermotion{
+        height:80px;
+        width:80px;
+        object-fit:contain;
+        background-color: white;
+        border-radius: 50%;
+        padding: 0px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
+        position: relative;
+        top: -525px;
+        right: 110px;
+        border: 4px solid white;
+
+    }
 
 }
 
