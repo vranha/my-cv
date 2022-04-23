@@ -23,8 +23,7 @@ const children = {
 const pageTransition = {
     type: "spring",
     ease: "easeIn",
-    bounce: 0,
-    damping: 15,
+    bounce: 0, 
     duration: 1
 }
 const childTransition = {
@@ -48,7 +47,7 @@ export default function About({exitY, cycleExitY  }) {
         <motion.div  className={styles.container} variants={animations} initial="initial" animate="animate" exit="exit" transition={pageTransition}>
             <motion.div className={styles.center} variants={base} initial="initial" animate="animate" exit="exit" transition={childTransition}>
                 <h1>About</h1>
-                 <motion.h3 onClick={handleMain} variants={children}>Main</motion.h3>
+                 <h3 onClick={handleMain} className={styles.up} >Main</h3>
             </motion.div>
         </motion.div>
     );

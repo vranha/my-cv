@@ -12,6 +12,8 @@ import php from "../../assets/php.png";
 import laravel from "../../assets/laravel.png";
 import bootstrap from "../../assets/bootstrap.png";
 import framermotion from "../../assets/framermotion.png";
+import skills from "../../assets/skills.svg";
+import { useRef, useState } from "react";
 
 const animations = {
     initial: { x: "-100%" },
@@ -33,7 +35,6 @@ const pageTransition = {
     type: "spring",
     ease: "easeIn",
     bounce: 0,
-    damping: 15,
     duration: 1,
 };
 const childTransition = {
@@ -45,14 +46,73 @@ const childTransition = {
     staggerChildren: 0.2,
 };
 
+const myHtml = {
+    React: "React",
+    Angular: "Angular",
+    Node: "Node",
+    Mongo: "Mongo",
+    Php: "Php",
+    Laravel: "Laravel",
+    Bootstrap: "Bootstrap",
+    Framer: "Framer Motion",
+}
+
 
 export default function Skills({ exitPage, cycleExitPage }) {
     const navigate = useNavigate();
+    const [centerDev, setCenterDev] = useState(react);
+    const [htmlDev, setHtmlDev] = useState(myHtml.React);
+
+    const reactRef = useRef();
+    const angularRef = useRef();
+    const nodeRef = useRef();
+    const mongoRef = useRef();
+    const phpRef = useRef();
+    const laravelRef = useRef();
+    const bootstrapRef = useRef();
+    const framermotionRef = useRef();
 
     const handleMain = () => {
         navigate("/main");
         cycleExitPage(2);
     };
+
+    const devClick = (program, string ) => {
+        setCenterDev(program)
+        if (string === 'Angular') {
+            setHtmlDev(myHtml.Angular)  
+        } else if (string === 'React') {
+            setHtmlDev(myHtml.React)  
+        } else if (string === 'Node') {
+            setHtmlDev(myHtml.Node)  
+        } else if (string === 'Mongo') {
+            setHtmlDev(myHtml.Mongo)  
+        } else if (string === 'Php') {
+            setHtmlDev(myHtml.Php)  
+        } else if (string === 'Laravel') {
+            setHtmlDev(myHtml.Laravel)  
+        } else if (string === 'Bootstrap') {
+            setHtmlDev(myHtml.Bootstrap)  
+        } else if (string === 'Framer') {
+            setHtmlDev(myHtml.Framer)  
+        }
+
+
+        const arrayRefs = [reactRef, angularRef, nodeRef, mongoRef, phpRef, laravelRef, bootstrapRef, framermotionRef]
+
+        arrayRefs.forEach(element => {
+            console.log(element.current.className)
+            console.log(program)
+            if (element.current.className.includes(string)) {
+                element.current.style.borderColor='#575757';
+                element.current.style.filter='brightness(0.9)';
+                
+            } else {
+                element.current.style.borderColor='white';
+                element.current.style.filter='brightness(1)';
+            }
+        });
+    }
 
     return (
         <motion.div
@@ -71,11 +131,12 @@ export default function Skills({ exitPage, cycleExitPage }) {
                 exit="exit"
                 transition={childTransition}
             >
-                <h1>Mi developer <strong>skills</strong></h1>
+                <h1>My developer <strong>skills</strong></h1>
                 <motion.div className={styles.containerBasics} variants={base} transition={childTransition}>
-                <svg className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
+                   <img className={styles.backSvg} src={skills} alt="" /> 
+                <motion.svg variants={children} className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
 	<path fill="#74d8c4" d="M293,337.5Q127,435,125,236.5Q123,38,291,139Q459,240,293,337.5Z" />
-</svg>
+</motion.svg>
                     <motion.img
                         className={styles.basicsHtml}
                         variants={children}
@@ -120,15 +181,24 @@ export default function Skills({ exitPage, cycleExitPage }) {
                         alt="html icone"
                     />
                 </motion.div>
+                <motion.div className={styles.centerDev}>
+                    <motion.img src={centerDev} alt="" />
+                    <motion.h3 className={styles.centerDevTitle}>
+                        {htmlDev}
+                    </motion.h3>
+                </motion.div>
                 <motion.div className={styles.containerDev} variants={base} transition={childTransition}>
+        
                 <motion.img
+                        onClick={() => devClick(react,'React')}
+                        ref={reactRef}
                         className={styles.devReact}
                         variants={children}
                         whileInView={{
                             x: [0, 110, 170, 110, 0, -110, -170, -110, -0],
                             y: [0, 65, 175, 290, 358, 290, 175, 65, 0],
                             ease:"backIn",
-                            transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
+                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
                             
                             repeat: Infinity
                         }}
@@ -136,116 +206,125 @@ export default function Skills({ exitPage, cycleExitPage }) {
                         alt="html icone"
                     />
                 <motion.img
+                        onClick={() => devClick(angular,'Angular')}
+                        ref={angularRef}
                         className={styles.devAngular}
                         variants={children}
-                        // whileInView={{
-                        //     x: [5, -5, 5, -5,5],
-                        //     y: [5, -5, -15, -5, 5],
-                        //     ease:"backInOut",
-                        //     transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
+                        whileInView={{
+                            x: [0, 65, 0, -110, -220, -280, -220, -110, 0],
+                            y: [0, 115, 225, 295, 225, 115, 0, -65, 0],
+                            ease:"backInOut",
+                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
                             
-                        //     repeat: Infinity
-                        // }}
+                            repeat: Infinity
+                        }}
                         src={angular}
                         alt="html icone"
                     />
                 <motion.img
+                        onClick={() => devClick(node,'Node')}
+                        ref={nodeRef}
                         className={styles.devNode}
                         variants={children}
-                        // whileInView={{
-                        //     x: [5, -5, 5, -5,5],
-                        //     y: [5, -5, -15, -5, 5],
-                        //     ease:"backInOut",
-                        //     transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
+                        whileInView={{
+                            x: [0,-60, -170, -280, -340, -280, -170, -60, 0],
+                            y: [0, 115, 180, 115, 0, -115, -180, -115, 0],
+                            ease:"backInOut",
+                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
                             
-                        //     repeat: Infinity
-                        // }}
+                            repeat: Infinity
+                        }}
                         src={node}
                         alt="html icone"
                     />
                 <motion.img
+                        onClick={() => devClick(mongo,'Mongo')}
+                        ref={mongoRef}
                         className={styles.devMongo}
                         variants={children}
-                        // whileInView={{
-                        //     x: [5, -5, 5, -5,5],
-                        //     y: [5, -5, -15, -5, 5],
-                        //     ease:"backInOut",
-                        //     transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
+                        whileInView={{
+                            x: [0, -110, -220, -280, -220, -110, 0, 60, 0],
+                            y: [0, 65, 0, -115, -230, -290, -230, -115, 0 ],
+                            ease:"backInOut",
+                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
                             
-                        //     repeat: Infinity
-                        // }}
+                            repeat: Infinity
+                        }}
                         src={mongo}
                         alt="html icone"
                     />
                 <motion.img
+                        onClick={() => devClick(php, 'Php')}
+                        ref={phpRef}
                         className={styles.devPhp}
                         variants={children}
-                        // whileInView={{
-                        //     x: [5, -5, 5, -5,5],
-                        //     y: [5, -5, -15, -5, 5],
-                        //     ease:"backInOut",
-                        //     transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
+                        whileInView={{
+                            x: [0, -110, -170, -110, 0, 110, 170, 110, 0],
+                            y: [0, -65, -175, -290, -358, -290, -175, -65, 0],
+                            ease:"backInOut",
+                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
                             
-                        //     repeat: Infinity
-                        // }}
+                            repeat: Infinity
+                        }}
                         src={php}
                         alt="html icone"
                     />
                 <motion.img
+                        onClick={() => devClick(laravel, 'Laravel')}
+                        ref={laravelRef}
                         className={styles.devLaravel}
                         variants={children}
-                        // whileInView={{
-                        //     x: [5, -5, 5, -5,5],
-                        //     y: [5, -5, -15, -5, 5],
-                        //     ease:"backInOut",
-                        //     transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
+                        whileInView={{
+                            x: [0, -65, 0, 110, 220, 280, 220, 110, 0],
+                            y: [0, -115, -225, -295, -225, -115, 0, 65, 0],
+                            ease:"backInOut",
+                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
                             
-                        //     repeat: Infinity
-                        // }}
+                            repeat: Infinity
+                        }}
                         src={laravel}
                         alt="html icone"
                     />
                 <motion.img
+                        onClick={() => devClick(bootstrap, 'Bootstrap')}
+                        ref={bootstrapRef}
                         className={styles.devBootstrap}
                         variants={children}
-                        // whileInView={{
-                        //     x: [5, -5, 5, -5,5],
-                        //     y: [5, -5, -15, -5, 5],
-                        //     ease:"backInOut",
-                        //     transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
+                        whileInView={{
+                            x: [0,60, 170, 280, 340, 280, 170, 60, 0],
+                            y: [0, -115, -180, -115, 0, 115, 180, 115, 0],
+                            ease:"backInOut",
+                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
                             
-                        //     repeat: Infinity
-                        // }}
+                            repeat: Infinity
+                        }}
                         src={bootstrap}
                         alt="html icone"
                     />
                 <motion.img
+                        onClick={() => devClick(framermotion, 'Framer')}
+                        ref={framermotionRef}
                         className={styles.devFramermotion}
                         variants={children}
-                        // whileInView={{
-                        //     x: [5, -5, 5, -5,5],
-                        //     y: [5, -5, -15, -5, 5],
-                        //     ease:"backInOut",
-                        //     transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
+                        whileInView={{
+                            x: [0, 110, 220, 280, 220, 110, 0, -60, 0],
+                            y: [0, -65, 0, 115, 230, 290, 230, 115, 0 ],
+                            ease:"backInOut",
+                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
                             
-                        //     repeat: Infinity
-                        // }}
+                            repeat: Infinity
+                        }}
                         src={framermotion}
                         alt="html icone"
                     />
                 </motion.div>
             </motion.div>
-            <motion.h3
-             className={styles.main}
+            <h3
+             className={styles.right}
                 onClick={handleMain}
-                variants={base}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={childTransition}
             >
                 Main
-            </motion.h3>
+            </h3>
         </motion.div>
     );
 }

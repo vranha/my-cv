@@ -24,7 +24,6 @@ const pageTransition = {
     type: "spring",
     ease: "easeIn",
     bounce: 0,
-    damping: 15,
     duration: 1
 }
 const childTransition = {
@@ -49,7 +48,7 @@ export default function Projects({exitPage, cycleExitPage  }) {
         <motion.div  className={styles.container} variants={animations} initial="initial" animate="animate" exit="exit" transition={pageTransition}>
             <motion.div className={styles.center} variants={base} initial="initial" animate="animate" exit="exit" transition={childTransition}>
                 <h1>projects</h1>
-                 <motion.h3 onClick={handleMain} variants={children}>Main</motion.h3>
+                 <h3 className={styles.left} onClick={handleMain} variants={children}>Main</h3>
             </motion.div>
         </motion.div>
     );

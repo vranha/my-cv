@@ -3,65 +3,68 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
-.container::before {
-    content: "";
-    position: fixed;
+// .container::before {
+//     content: "";
+//     position: fixed;
     
-    right: 40%;
-    top:10%;
-    z-index: -1;
+//     right: 30%;
+//     top:35%;
+//     z-index: -1;
   
-    display: block;
-    background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
-    background-size:cover;
-    transform: scale(1) scaleY(0.8);
-    width: 100%;
-    height: 100vh;
+//     display: block;
+//     background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
+//     background-size:cover;
+//     transform: scale(1.3) scaleY(1);
+//     width: 100%;
+//     height: 100vh;
   
-    -webkit-filter: blur(100px);
-    -moz-filter: blur(100px);
-    -o-filter: blur(100px);
-    -ms-filter: blur(100px);
-    filter: blur(100px) hue-rotate(340deg);
-    opacity: 0.2;
-  }
+//     -webkit-filter: blur(100px);
+//     -moz-filter: blur(100px);
+//     -o-filter: blur(100px);
+//     -ms-filter: blur(100px);
+//     filter: blur(100px) hue-rotate(340deg);
+//     opacity: 0.2;
+//   }
 
-.container::after {
-    content: "";
-    position: fixed;
+// .container::after {
+//     content: "";
+//     position: fixed;
     
-    left: 20%;
-    bottom:10%;
-    z-index: -1;
+//     left: 15%;
+//     bottom:20%;
+//     z-index: -1;
   
-    display: block;
-    background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
-    background-size:cover;
-    transform: scale(0.5);
-    width: 100%;
-    height: 100vh;
+//     display: block;
+//     background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
+//     background-size:cover;
+//     transform: scale(0.6);
+//     width: 100%;
+//     height: 100vh;
   
-    -webkit-filter: blur(100px);
-    -moz-filter: blur(100px);
-    -o-filter: blur(100px);
-    -ms-filter: blur(100px);
-    filter: blur(100px) hue-rotate(240deg);
-    opacity: 0.2;
-  }
+//     -webkit-filter: blur(100px);
+//     -moz-filter: blur(100px);
+//     -o-filter: blur(100px);
+//     -ms-filter: blur(100px);
+//     filter: blur(100px) hue-rotate(220deg);
+//     opacity: 0.2;
+//   }
 
 .center{
    position: relative;
-   bottom: 230px;
+   bottom: 280px;
 
 
    h1{
        font-size:50px;
        font-weight: 700;
+        cursor: default;
 
        strong{
-           color:rgb(255, 191, 53)
+           color:rgb(255, 191, 53);
        }
    }
    .containerBasics {
@@ -112,20 +115,27 @@
        position: absolute;
        left: 0px;
        top:-120px;
-       filter:drop-shadow(0 0 40px rgba(0, 0, 0, 0.308)) blur(2px) hue-rotate(100deg) ;
+       filter:drop-shadow(0 0 40px rgba(0, 0, 0, 0.308)) blur(1px) hue-rotate(240deg) ;
    }
 
-
+   .backSvg{
+    transform: scale(0.3);
+     position: absolute;
+     left: -150px;
+     top:150px;
+ }
 }
 
 .containerDev {
 
     position: absolute;
-    top: 100px;
+    top: 80px;
     left: 350px;
+    height: 500px;
 
 
     .devReact{
+        cursor: pointer;
         height:80px;
         width:80px;
         object-fit:contain;
@@ -136,10 +146,11 @@
         position: relative;
         top: 0px;
         right: 0px;
-        border: 4px solid white;
+        border: 8px solid rgb(87, 87, 87);
     }
 
     .devAngular{
+        cursor: pointer;
         height:80px;
         width:80px;
         object-fit:contain;
@@ -150,10 +161,11 @@
         position: relative;
         top: -20px;
         left: 110px;
-        border: 4px solid white;
+        border: 8px solid white;
 
     }
     .devNode{
+        cursor: pointer;
         height:80px;
         width:80px;
         object-fit:contain;
@@ -164,10 +176,11 @@
         position: relative;
         top: 10px;
         left: 170px;
-        border: 4px solid white;
+        border: 8px solid white;
 
     }
     .devMongo{
+        cursor: pointer;
         height:80px;
         width:80px;
         object-fit:contain;
@@ -178,10 +191,11 @@
         position: relative;
         top: 40px;
         left: 110px;
-        border: 4px solid white;
+        border: 8px solid white;
 
     }
     .devPhp{
+        cursor: pointer;
         height:80px;
         width:80px;
         object-fit:contain;
@@ -192,10 +206,11 @@
         position: relative;
         top: 20px;
         right: 0px;
-        border: 4px solid white;
+        border: 8px solid white;
 
     }
     .devLaravel{
+        cursor: pointer;
         height:80px;
         width:80px;
         object-fit:contain;
@@ -206,10 +221,11 @@
         position: relative;
         top: -127px;
         right: 110px;
-        border: 4px solid white;
+        border: 8px solid white;
 
     }
     .devBootstrap{
+        cursor: pointer;
         height:80px;
         width:80px;
         object-fit:contain;
@@ -220,10 +236,11 @@
         position: relative;
         top: -325px;
         right: 170px;
-        border: 4px solid white;
+        border: 8px solid white;
 
     }
     .devFramermotion{
+        cursor: pointer;
         height:80px;
         width:80px;
         object-fit:contain;
@@ -234,13 +251,76 @@
         position: relative;
         top: -525px;
         right: 110px;
-        border: 4px solid white;
+        border: 8px solid white;
 
     }
 
-}
+ 
 
-.main {
-    position: absolute;
-    right: 50px 
 }
+.centerDev{
+        position: absolute;
+        top: 210px;
+        left:327px;
+
+        &Title{
+            position: relative;
+            bottom: 110px;
+            letter-spacing: 0px;
+            font-size: 30px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0px 2px 3px black;
+            filter:drop-shadow(0 0 20px black);
+        }
+
+        img{
+            height: 180px;
+            width: 180px;
+            background-color: white;
+            border-radius: 50%;
+            border: 10px solid rgb(75, 75, 75);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.295);
+            object-fit:contain;
+            filter: blur(4px) opacity(1) ;
+            
+        }
+
+        }
+        .right{
+            display: inline-block;
+            position: fixed;
+            top: 50%;
+            right: 0%;
+            transform: translate(-50%, -50%);
+            padding: 20px 25px;
+            min-height: 320px;
+            line-height: 0.8em;
+            border-radius: 10px;
+            font-size:20px;
+            font-weight: bold;
+            border: 2px solid rgb(20, 170, 138);
+            background-color: white;
+            cursor: pointer;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            transition:0.3s ease-in-out;
+            
+        
+            &:hover{
+                color: #FFBF35;
+                background-color: rgb(20, 170, 138);
+            }
+        
+            &:hover:before{
+                content:'🥰';
+                margin-bottom: 40px;
+            
+            }
+            &:hover:after{
+                content:'🥰';
+                margin-top: 40px;
+        
+            }
+        }
+

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom";
+import contactme from "../../assets/contactme.svg";
 import styles from "./Contactme.module.scss"
 
 const animations = {
@@ -24,7 +25,6 @@ const pageTransition = {
     type: "spring",
     ease: "easeIn",
     bounce: 0,
-    damping: 15,
     duration: 1
 }
 const childTransition = {
@@ -47,10 +47,14 @@ export default function Contactme({exitY, cycleExitY  }) {
 
     return (
         <motion.div  className={styles.container} variants={animations} initial="initial" animate="animate" exit="exit" transition={pageTransition}>
-            <motion.div className={styles.center} variants={base} initial="initial" animate="animate" exit="exit" transition={childTransition}>
-                <h1>Contact me</h1>
-                 <motion.h3 onClick={handleMain} variants={children}>Main</motion.h3>
-            </motion.div>
+            <div className={styles.background}>
+                <motion.div className={styles.center} variants={base} initial="initial" animate="animate" exit="exit" transition={childTransition}>
+                    <h1>Contact me</h1>
+                     <h3 onClick={handleMain} className={styles.down} >Main</h3>
+                </motion.div>
+            </div>
+                    <img className={styles.emailSvg} src={contactme} alt="" />
         </motion.div>
     );
 }
+
