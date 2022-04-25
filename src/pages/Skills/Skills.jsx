@@ -55,8 +55,7 @@ const myHtml = {
     Laravel: "Laravel",
     Bootstrap: "Bootstrap",
     Framer: "Framer Motion",
-}
-
+};
 
 export default function Skills({ exitPage, cycleExitPage }) {
     const navigate = useNavigate();
@@ -77,42 +76,40 @@ export default function Skills({ exitPage, cycleExitPage }) {
         cycleExitPage(2);
     };
 
-    const devClick = (program, string ) => {
-        setCenterDev(program)
-        if (string === 'Angular') {
-            setHtmlDev(myHtml.Angular)  
-        } else if (string === 'React') {
-            setHtmlDev(myHtml.React)  
-        } else if (string === 'Node') {
-            setHtmlDev(myHtml.Node)  
-        } else if (string === 'Mongo') {
-            setHtmlDev(myHtml.Mongo)  
-        } else if (string === 'Php') {
-            setHtmlDev(myHtml.Php)  
-        } else if (string === 'Laravel') {
-            setHtmlDev(myHtml.Laravel)  
-        } else if (string === 'Bootstrap') {
-            setHtmlDev(myHtml.Bootstrap)  
-        } else if (string === 'Framer') {
-            setHtmlDev(myHtml.Framer)  
+    const devClick = (program, string) => {
+        setCenterDev(program);
+        if (string === "Angular") {
+            setHtmlDev(myHtml.Angular);
+        } else if (string === "React") {
+            setHtmlDev(myHtml.React);
+        } else if (string === "Node") {
+            setHtmlDev(myHtml.Node);
+        } else if (string === "Mongo") {
+            setHtmlDev(myHtml.Mongo);
+        } else if (string === "Php") {
+            setHtmlDev(myHtml.Php);
+        } else if (string === "Laravel") {
+            setHtmlDev(myHtml.Laravel);
+        } else if (string === "Bootstrap") {
+            setHtmlDev(myHtml.Bootstrap);
+        } else if (string === "Framer") {
+            setHtmlDev(myHtml.Framer);
         }
 
+        const arrayRefs = [reactRef, angularRef, nodeRef, mongoRef, phpRef, laravelRef, bootstrapRef, framermotionRef];
 
-        const arrayRefs = [reactRef, angularRef, nodeRef, mongoRef, phpRef, laravelRef, bootstrapRef, framermotionRef]
-
-        arrayRefs.forEach(element => {
-            console.log(element.current.className)
-            console.log(program)
+        arrayRefs.forEach((element) => {
+            console.log(element.current.className);
+            console.log(program);
             if (element.current.className.includes(string)) {
-                element.current.style.borderColor='#575757';
-                element.current.style.filter='brightness(0.9)';
-                
+                element.current.style.borderColor = "#ffbf35";
+                element.current.style.filter = "brightness(0.7)";
             } else {
-                element.current.style.borderColor='white';
-                element.current.style.filter='brightness(1)';
+                element.current.style.borderColor = "white";
+                element.current.style.filter = "brightness(1)";
             }
         });
-    }
+    };
 
     return (
         <motion.div
@@ -123,208 +120,272 @@ export default function Skills({ exitPage, cycleExitPage }) {
             exit="exit"
             transition={pageTransition}
         >
-            <motion.div
-                className={styles.center}
-                variants={base}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                transition={childTransition}
-            >
-                <h1>My developer <strong>skills</strong></h1>
-                <motion.div className={styles.containerBasics} variants={base} transition={childTransition}>
-                   <img className={styles.backSvg} src={skills} alt="" /> 
-                <motion.svg variants={children} className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
+            <div className={styles.background}>
+                <motion.div className={styles.containerBasicsNames} variants={base} transition={childTransition}>
+                    {/* <motion.svg variants={children} className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
 	<path fill="#74d8c4" d="M293,337.5Q127,435,125,236.5Q123,38,291,139Q459,240,293,337.5Z" />
-</motion.svg>
-                    <motion.img
-                        className={styles.basicsHtml}
+</motion.svg> */}
+                    <motion.svg
+                        className={styles.basicsHtmlName}
                         variants={children}
                         whileInView={{
-                            x: [5, -5, 5, -5,5],
+                            x: [5, -5, 5, -5, 5],
                             y: [5, -5, -15, -5, 5],
-                            ease:"backInOut",
-                            transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
+                            ease: "backInOut",
+                            transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
+
+                            repeat: Infinity,
                         }}
                         src={html}
                         alt="html icone"
-                    />
+                        viewBox="0 0 1600 500"
+                    >
+                        <path id="curve1" d="M73.5,108.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                        <text width="500">
+                            <textPath href="#curve1">HTML</textPath>
+                        </text>
+                    </motion.svg>
 
-                    <motion.img
-                        className={styles.basicsCss}
+                    <motion.svg
+                        className={styles.basicsCssName}
                         variants={children}
                         whileInView={{
-                            x: [ -5, 5, 15, 5, -5 ],
-                            y: [5, 0, 5, 0 , 5],
-                            ease:"backInOut",
-                            transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
+                            x: [-5, 5, 15, 5, -5],
+                            y: [5, 0, 5, 0, 5],
+                            ease: "backInOut",
+                            transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
+
+                            repeat: Infinity,
                         }}
                         src={css}
                         alt="html icone"
-                    />
-                    <motion.img
-                        className={styles.basicsJs}
+                        
+                    >
+                        <path id="curve2" d="M73.5,108.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                        <text width="500">
+                            <textPath href="#curve2">CSS</textPath>
+                        </text>
+                    </motion.svg>
+                    <motion.svg
+                        className={styles.basicsJsName}
                         variants={children}
                         whileInView={{
                             x: [-5, 5, -5, 5, -5],
                             y: [-15, -5, 5, -5, -15],
-                            ease:"backInOut",
-                            transition: { duration: 5, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
+                            ease: "backInOut",
+                            transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
+
+                            repeat: Infinity,
                         }}
                         src={js}
                         alt="html icone"
-                    />
+                        viewBox="0 0 1400 500"
+                    >
+                        <path id="curve3" d="M73.5,199.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                        <text width="500">
+                            <textPath href="#curve3">JAVASCRIPT</textPath>
+                        </text>
+                    </motion.svg>
                 </motion.div>
-                <motion.div className={styles.centerDev}>
-                    <motion.img src={centerDev} alt="" />
-                    <motion.h3 className={styles.centerDevTitle}>
-                        {htmlDev}
-                    </motion.h3>
+                <motion.div
+                    className={styles.center}
+                    variants={base}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={childTransition}
+                >
+                    <h1>
+                        My developer <strong>skills</strong>
+                    </h1>
+                    <motion.div className={styles.containerBasics} variants={base} transition={childTransition}>
+                        <img className={styles.backSvg} src={skills} alt="" />
+                        {/* <motion.svg variants={children} className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
+	<path fill="#74d8c4" d="M293,337.5Q127,435,125,236.5Q123,38,291,139Q459,240,293,337.5Z" />
+</motion.svg> */}
+                        <motion.img
+                            className={styles.basicsHtml}
+                            variants={children}
+                            whileInView={{
+                                x: [5, -5, 5, -5, 5],
+                                y: [5, -5, -15, -5, 5],
+                                ease: "backInOut",
+                                transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={html}
+                            alt="html icone"
+                        />
+
+                        <motion.img
+                            className={styles.basicsCss}
+                            variants={children}
+                            whileInView={{
+                                x: [-5, 5, 15, 5, -5],
+                                y: [5, 0, 5, 0, 5],
+                                ease: "backInOut",
+                                transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={css}
+                            alt="html icone"
+                        />
+                        <motion.img
+                            className={styles.basicsJs}
+                            variants={children}
+                            whileInView={{
+                                x: [-5, 5, -5, 5, -5],
+                                y: [-15, -5, 5, -5, -15],
+                                ease: "backInOut",
+                                transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={js}
+                            alt="html icone"
+                        />
+                    </motion.div>
+                    <motion.div className={styles.centerDev}>
+                        <motion.img src={centerDev} alt="" />
+                        <motion.h3 className={styles.centerDevTitle}>{htmlDev}</motion.h3>
+                    </motion.div>
+                    <motion.div className={styles.containerDev} variants={base} transition={childTransition}>
+                        <motion.img
+                            onClick={() => devClick(react, "React")}
+                            ref={reactRef}
+                            className={styles.devReact}
+                            variants={children}
+                            whileInView={{
+                                x: [0, 110, 170, 110, 0, -110, -170, -110, -0],
+                                y: [0, 65, 175, 290, 358, 290, 175, 65, 0],
+                                ease: "backIn",
+                                transition: { duration: 35, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={react}
+                            alt="html icone"
+                        />
+                        <motion.img
+                            onClick={() => devClick(angular, "Angular")}
+                            ref={angularRef}
+                            className={styles.devAngular}
+                            variants={children}
+                            whileInView={{
+                                x: [0, 65, 0, -110, -220, -280, -220, -110, 0],
+                                y: [0, 115, 225, 295, 225, 115, 0, -65, 0],
+                                ease: "backInOut",
+                                transition: { duration: 35, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={angular}
+                            alt="html icone"
+                        />
+                        <motion.img
+                            onClick={() => devClick(node, "Node")}
+                            ref={nodeRef}
+                            className={styles.devNode}
+                            variants={children}
+                            whileInView={{
+                                x: [0, -60, -170, -280, -340, -280, -170, -60, 0],
+                                y: [0, 115, 180, 115, 0, -115, -180, -115, 0],
+                                ease: "backInOut",
+                                transition: { duration: 35, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={node}
+                            alt="html icone"
+                        />
+                        <motion.img
+                            onClick={() => devClick(mongo, "Mongo")}
+                            ref={mongoRef}
+                            className={styles.devMongo}
+                            variants={children}
+                            whileInView={{
+                                x: [0, -110, -220, -280, -220, -110, 0, 60, 0],
+                                y: [0, 65, 0, -115, -230, -290, -230, -115, 0],
+                                ease: "backInOut",
+                                transition: { duration: 35, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={mongo}
+                            alt="html icone"
+                        />
+                        <motion.img
+                            onClick={() => devClick(php, "Php")}
+                            ref={phpRef}
+                            className={styles.devPhp}
+                            variants={children}
+                            whileInView={{
+                                x: [0, -110, -170, -110, 0, 110, 170, 110, 0],
+                                y: [0, -65, -175, -290, -358, -290, -175, -65, 0],
+                                ease: "backInOut",
+                                transition: { duration: 35, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={php}
+                            alt="html icone"
+                        />
+                        <motion.img
+                            onClick={() => devClick(laravel, "Laravel")}
+                            ref={laravelRef}
+                            className={styles.devLaravel}
+                            variants={children}
+                            whileInView={{
+                                x: [0, -65, 0, 110, 220, 280, 220, 110, 0],
+                                y: [0, -115, -225, -295, -225, -115, 0, 65, 0],
+                                ease: "backInOut",
+                                transition: { duration: 35, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={laravel}
+                            alt="html icone"
+                        />
+                        <motion.img
+                            onClick={() => devClick(bootstrap, "Bootstrap")}
+                            ref={bootstrapRef}
+                            className={styles.devBootstrap}
+                            variants={children}
+                            whileInView={{
+                                x: [0, 60, 170, 280, 340, 280, 170, 60, 0],
+                                y: [0, -115, -180, -115, 0, 115, 180, 115, 0],
+                                ease: "backInOut",
+                                transition: { duration: 35, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={bootstrap}
+                            alt="html icone"
+                        />
+                        <motion.img
+                            onClick={() => devClick(framermotion, "Framer")}
+                            ref={framermotionRef}
+                            className={styles.devFramermotion}
+                            variants={children}
+                            whileInView={{
+                                x: [0, 110, 220, 280, 220, 110, 0, -60, 0],
+                                y: [0, -65, 0, 115, 230, 290, 230, 115, 0],
+                                ease: "backInOut",
+                                transition: { duration: 35, repeat: Infinity, repeatType: "loop" },
+
+                                repeat: Infinity,
+                            }}
+                            src={framermotion}
+                            alt="html icone"
+                        />
+                    </motion.div>
                 </motion.div>
-                <motion.div className={styles.containerDev} variants={base} transition={childTransition}>
-        
-                <motion.img
-                        onClick={() => devClick(react,'React')}
-                        ref={reactRef}
-                        className={styles.devReact}
-                        variants={children}
-                        whileInView={{
-                            x: [0, 110, 170, 110, 0, -110, -170, -110, -0],
-                            y: [0, 65, 175, 290, 358, 290, 175, 65, 0],
-                            ease:"backIn",
-                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
-                        }}
-                        src={react}
-                        alt="html icone"
-                    />
-                <motion.img
-                        onClick={() => devClick(angular,'Angular')}
-                        ref={angularRef}
-                        className={styles.devAngular}
-                        variants={children}
-                        whileInView={{
-                            x: [0, 65, 0, -110, -220, -280, -220, -110, 0],
-                            y: [0, 115, 225, 295, 225, 115, 0, -65, 0],
-                            ease:"backInOut",
-                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
-                        }}
-                        src={angular}
-                        alt="html icone"
-                    />
-                <motion.img
-                        onClick={() => devClick(node,'Node')}
-                        ref={nodeRef}
-                        className={styles.devNode}
-                        variants={children}
-                        whileInView={{
-                            x: [0,-60, -170, -280, -340, -280, -170, -60, 0],
-                            y: [0, 115, 180, 115, 0, -115, -180, -115, 0],
-                            ease:"backInOut",
-                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
-                        }}
-                        src={node}
-                        alt="html icone"
-                    />
-                <motion.img
-                        onClick={() => devClick(mongo,'Mongo')}
-                        ref={mongoRef}
-                        className={styles.devMongo}
-                        variants={children}
-                        whileInView={{
-                            x: [0, -110, -220, -280, -220, -110, 0, 60, 0],
-                            y: [0, 65, 0, -115, -230, -290, -230, -115, 0 ],
-                            ease:"backInOut",
-                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
-                        }}
-                        src={mongo}
-                        alt="html icone"
-                    />
-                <motion.img
-                        onClick={() => devClick(php, 'Php')}
-                        ref={phpRef}
-                        className={styles.devPhp}
-                        variants={children}
-                        whileInView={{
-                            x: [0, -110, -170, -110, 0, 110, 170, 110, 0],
-                            y: [0, -65, -175, -290, -358, -290, -175, -65, 0],
-                            ease:"backInOut",
-                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
-                        }}
-                        src={php}
-                        alt="html icone"
-                    />
-                <motion.img
-                        onClick={() => devClick(laravel, 'Laravel')}
-                        ref={laravelRef}
-                        className={styles.devLaravel}
-                        variants={children}
-                        whileInView={{
-                            x: [0, -65, 0, 110, 220, 280, 220, 110, 0],
-                            y: [0, -115, -225, -295, -225, -115, 0, 65, 0],
-                            ease:"backInOut",
-                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
-                        }}
-                        src={laravel}
-                        alt="html icone"
-                    />
-                <motion.img
-                        onClick={() => devClick(bootstrap, 'Bootstrap')}
-                        ref={bootstrapRef}
-                        className={styles.devBootstrap}
-                        variants={children}
-                        whileInView={{
-                            x: [0,60, 170, 280, 340, 280, 170, 60, 0],
-                            y: [0, -115, -180, -115, 0, 115, 180, 115, 0],
-                            ease:"backInOut",
-                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
-                        }}
-                        src={bootstrap}
-                        alt="html icone"
-                    />
-                <motion.img
-                        onClick={() => devClick(framermotion, 'Framer')}
-                        ref={framermotionRef}
-                        className={styles.devFramermotion}
-                        variants={children}
-                        whileInView={{
-                            x: [0, 110, 220, 280, 220, 110, 0, -60, 0],
-                            y: [0, -65, 0, 115, 230, 290, 230, 115, 0 ],
-                            ease:"backInOut",
-                            transition: { duration: 35, repeat: Infinity, repeatType: "loop"  },
-                            
-                            repeat: Infinity
-                        }}
-                        src={framermotion}
-                        alt="html icone"
-                    />
-                </motion.div>
-            </motion.div>
-            <h3
-             className={styles.right}
-                onClick={handleMain}
-            >
-                Main
-            </h3>
+                <h3 className={styles.right} onClick={handleMain}>
+                    Main
+                </h3>
+            </div>
         </motion.div>
     );
 }

@@ -53,25 +53,40 @@
 //     opacity: 0.2;
 //   }
 
+
+.background{
+    // border: 4px solid #E3B23C88;
+    border-radius: 10px;
+    height: 75vh;
+    width: 75vw;
+    box-shadow: 0px 20px 50px 10px rgba(0, 0, 0, 0.247);
+    display: flex;
+    justify-content: center;
+    margin-right: 60px;
+    background-color: #4D5061;
+
+}
 .center{
    position: relative;
-   bottom: 280px;
-
+   bottom: 0px;
 
    h1{
        font-size:50px;
        font-weight: 700;
         cursor: default;
+        margin-top: 20px;
+        color: white;
 
        strong{
-           color:rgb(255, 191, 53);
+           display: block;
+           color:#ffbf35;
        }
    }
    .containerBasics {
 
     position: relative;
     top: 50px;
-    right: 350px;
+    right: 20vw;
   
 
     .basicsHtml{
@@ -84,6 +99,8 @@
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.404);
         position: relative;
         top: 130px;
+
+  
     }
     .basicsCss{
         height:80px;
@@ -110,13 +127,13 @@
         top: 130px;
     }
    }
-   .backBasics{
-      transform: rotate(95deg) scale(0.8);
-       position: absolute;
-       left: 0px;
-       top:-120px;
-       filter:drop-shadow(0 0 40px rgba(0, 0, 0, 0.308)) blur(1px) hue-rotate(240deg) ;
-   }
+//    .backBasics{
+//       transform: rotate(95deg) scale(0.6);
+//        position: absolute;
+//        left: 0px;
+//        top:-120px;
+//        filter:drop-shadow(0 0 40px rgba(0, 0, 0, 0.308)) blur(1px) hue-rotate(40deg) ;
+//    }
 
    .backSvg{
     transform: scale(0.3);
@@ -130,7 +147,7 @@
 
     position: absolute;
     top: 80px;
-    left: 350px;
+    left: 30vw;
     height: 500px;
 
 
@@ -261,7 +278,7 @@
 .centerDev{
         position: absolute;
         top: 210px;
-        left:327px;
+        left:26.5vw;
 
         &Title{
             position: relative;
@@ -279,7 +296,7 @@
             width: 180px;
             background-color: white;
             border-radius: 50%;
-            border: 10px solid rgb(75, 75, 75);
+            border: 10px solid #ffbf35;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.295);
             object-fit:contain;
             filter: blur(4px) opacity(1) ;
@@ -299,7 +316,7 @@
             border-radius: 10px;
             font-size:20px;
             font-weight: bold;
-            border: 2px solid rgb(20, 170, 138);
+            border: 2px solid #186f85;
             background-color: white;
             cursor: pointer;
             writing-mode: vertical-rl;
@@ -309,18 +326,76 @@
         
             &:hover{
                 color: #FFBF35;
-                background-color: rgb(20, 170, 138);
+                background-color: #186f85;
             }
-        
-            &:hover:before{
-                content:'🥰';
-                margin-bottom: 40px;
-            
-            }
-            &:hover:after{
-                content:'🥰';
-                margin-top: 40px;
-        
-            }
+            &:before{
+                content:'➡';
+                margin-bottom: 60px;
+                transition:0s ease-in-out;
+              }
+              &:after{
+                content:'➡';
+                margin-top: 60px;
+                transition:0s ease-in-out;
+              }
         }
 
+
+        .containerBasicsNames {
+
+            position: absolute;
+            top: 270px;
+            left: calc(30vw - 150px);
+          
+        
+            .basicsHtmlName{
+                position: relative;
+                top: 133px;
+                right: -14px;
+               
+                
+                path {
+                    fill: transparent;
+                  }
+
+                text{
+                    fill: white;
+                    font-size:80px;
+                    text-align: center;
+                    transform: rotate(23deg);
+                }
+            }
+            .basicsCssName{
+                position: relative;
+                bottom: 92px;
+                left: 103px;
+
+                path {
+                    fill: transparent;
+                  }
+
+                text{
+                    fill: white;
+                    font-size:100px;
+                    text-align: center;
+                    transform: rotate(27deg) scale(0.15);
+                }
+            }
+            
+            .basicsJsName{
+                position: relative;
+                bottom: 122px;
+                left: 143px;
+
+                path {
+                    fill: transparent;
+                  }
+
+                text{
+                    fill: white;
+                    font-size:70px;
+                    text-align: center;
+                    transform: rotate(-2deg);
+                }
+            }
+           }
