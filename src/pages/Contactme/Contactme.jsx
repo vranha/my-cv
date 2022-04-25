@@ -15,9 +15,9 @@ const animations = {
     exit: { y: "-100%" },
 };
 const base = {
-    initial: { scale: 0 },
-    animate: { scale: 1 },
-    exit: { scale: 0 },
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
 };
 const children = {
     initial: { scale: 0 },
@@ -37,8 +37,8 @@ const childTransition = {
     type: "tween",
     bounce: 0.5,
     duration: 0.2,
-    delay: 0.2,
-    delayChildren: 0.5,
+    delay: 0.1,
+    delayChildren: 0.2,
     staggerChildren: 0.3,
 };
 
@@ -85,33 +85,33 @@ export default function Contactme({ exitY, cycleExitY }) {
                     exit="exit"
                     transition={childTransition}
                 >
-                    <div className={styles.left}> 
+                    <motion.div className={styles.left} variants={base} transition={childTransition}> 
                         
-                            <article className={styles.contact__option}>
+                            <motion.article className={styles.contact__option} variants={children}>
                             <MdOutlineMail className={styles.contact__icon}/>
-                                <h4>Email</h4>
+                                <h4>E-mail</h4>
                                 <h5>urioleh@gmail.com</h5>
-                                <a href="mailto:urioleh@gmail.com" target="_blank" rel="noreferrer">Send a message</a>
-                            </article>
-                            <article className={styles.contact__option}>
+                                <a href="mailto:urioleh@gmail.com" target="_blank" rel="noreferrer">Send an e-mail</a>
+                            </motion.article>
+                            <motion.article className={styles.contact__option} variants={children}>
                             <HiOutlinePhone className={styles.contact__icon}/>
                                 <h4>Wanna talk?</h4>
                                 <h5>674411302</h5>
                                 <a href={`tel:${+34674411302}`} target="_blank" rel="noreferrer">Call me</a>
-                            </article>
-                            <article className={styles.contact__option}>
+                            </motion.article>
+                            <motion.article className={styles.contact__option} variants={children}>
                             <BsWhatsapp className={styles.contact__icon}/>
                                 <h4>WhatsApp</h4>
                                 <h5>Don't be shy</h5>
                                 <a href="https://api.whatsapp.com/send?phone=+34674411302" target="_blank" rel="noreferrer">Send a message</a>
-                            </article>
+                            </motion.article>
                         
-                    </div>
-                    <div className={styles.right}>
+                    </motion.div>
+                    <motion.div className={styles.right} variants={children} >
                     <h1>Contact me</h1>
                     {!done ? <form ref={form} onSubmit={sendEmail}>
                         <input type="text" name="user_name" className={styles.user} placeholder="Name" required />
-                        <input type="email" name="user_email" className={styles.user} placeholder="Email"required />
+                        <input type="email" name="user_email" className={styles.user} placeholder="E-mail"required />
                         <textarea name="message" className={styles.user} cols="30" rows="10" placeholder="Message" required></textarea>
                         <input type="submit" value="Send" className={styles.button}/>
                         <div className={styles.blur} style={{ background: "purple" }}>
@@ -121,7 +121,7 @@ export default function Contactme({ exitY, cycleExitY }) {
                             <h3>I'll answer you <strong>soon</strong> </h3>
                     </div> }
                     
-                    </div>
+                    </motion.div>
 
                 </motion.div>
             </div>

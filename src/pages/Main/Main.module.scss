@@ -6,28 +6,28 @@
     width: 100vw;
     overflow: hidden;
 }
-// .container::before {
-//     content: "";
-//     position: fixed;
+.container::before {
+    content: "";
+    position: fixed;
     
-//     left: 50%;
-//     top:20%;
-//     z-index: -1;
+    left: 50%;
+    top:20%;
+    z-index: -1;
   
-//     display: block;
-//     background-image: url('https://www.kindpng.com/picc/m/264-2647978_color-circle-background-circle-graphic-design-png-transparent.png');
-//     background-size:cover;
-//     transform: scale(0.7)  translate(-50%, -50%);;
-//     width: 100%;
-//     height: 100vh;
+    display: block;
+    background-image: url('https://www.kindpng.com/picc/m/264-2647978_color-circle-background-circle-graphic-design-png-transparent.png');
+    background-size:cover;
+    transform: scale(0.7)  translate(-50%, -50%);;
+    width: 100%;
+    height: 100vh;
   
-//     -webkit-filter: blur(100px);
-//     -moz-filter: blur(100px);
-//     -o-filter: blur(100px);
-//     -ms-filter: blur(100px);
-//     filter: blur(60px);
-//     opacity: 0.5;
-//   }
+    -webkit-filter: blur(100px);
+    -moz-filter: blur(100px);
+    -o-filter: blur(100px);
+    -ms-filter: blur(100px);
+    filter: blur(60px);
+    opacity: 0.5;
+  }
 
 
 
@@ -44,10 +44,8 @@
     grid-template-columns: 2fr 1.5fr;
     grid-template-rows: 2fr 1fr;
     align-items: center;
-    
-
-    background-color: #4D5061;
-  
+    background: linear-gradient(rgba(255, 255, 255, 0.63), rgba(255, 255, 255, 0.603)), url(../../assets/4853433.jpg);
+    background-size:120%;
   
 .titleContainer{
     grid-area: head;
@@ -66,7 +64,7 @@
 
 q {
     font-size:12px;
-    color:rgb(211, 211, 211);
+    color:rgb(139, 139, 139);
     font-weight:bold;
     text-align: left;
     margin-left:50px;
@@ -74,15 +72,15 @@ q {
 
 .fullstack{
    
-    color: #ffffff;
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.918);
+    color: black;
+    // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.918);
     text-align: left;
     margin-left:30px;
     margin-bottom:-30px;
     &Line{
         position: relative;
         bottom:15px;
-        left: 20px;
+        left: 15px;
         width: 3px;
         height: 30px;
         background-color: #ffbf35;
@@ -120,7 +118,7 @@ q {
            font-size:14px;
            font-weight: bold;
            border:2px solid #ffbf35;
-           background-color: #4D5061;
+           background-color: transparent;
            color:#ffbf35;
            cursor: pointer;
            transition:0.3s ease-in-out;
@@ -164,15 +162,15 @@ q {
     border-radius: 10px;
     font-size:20px;
     font-weight: bold;
-    border:2px solid #186f85;
+    border:2px solid #6f697e;
     background-color: white;
     cursor: pointer;
     transition:0.3s ease-in-out;
-    color: #186f85;
+    color: #6f697e;
 
     &:hover{
         color: #ffbf35;
-        background-color: #186f85;
+        background-color: #6f697e;
     }
    
 
@@ -200,16 +198,16 @@ q {
     border-radius: 10px;
     font-size:20px;
     font-weight: bold;
-    border:2px solid #186f85;
+    border:2px solid #6f697e;
     background-color: white;
     cursor: pointer;
     transition:0.3s ease-in-out;
-    color: #186f85;
+    color: #6f697e;
 
 
     &:hover{
         color: #ffbf35;
-        background-color: #186f85;
+        background-color: #6f697e;
     }
 
     &:before{
@@ -236,18 +234,18 @@ q {
     line-height: 0.8em;
     font-size:20px;
     font-weight: bold;
-    border:2px solid #186f85;
+    border:2px solid #6f697e;
     background-color: white;
     cursor: pointer;
     writing-mode: vertical-rl;
     text-orientation: upright;
     transition:0.3s ease-in-out;
-    color: #186f85;
+    color: #6f697e;
 
 
     &:hover{
         color: #ffbf35;
-        background-color: #186f85;
+        background-color: #6f697e;
     }
 
     &:before{
@@ -275,18 +273,18 @@ q {
     border-radius: 10px;
     font-size:20px;
     font-weight: bold;
-    border:2px solid #186f85;
+    border:2px solid #6f697e;
     background-color: white;
     cursor: pointer;
     writing-mode: vertical-rl;
     text-orientation: upright;
     transition:0.3s ease-in-out;
-    color: #186f85;
+    color: #6f697e;
 
 
     &:hover{
         color: #ffbf35;
-        background-color: #186f85;
+        background-color: #6f697e;
     }
 
     &:before{

@@ -5,33 +5,34 @@ import { FaLinkedin } from "react-icons/fa";
 import CV from "../../assets/CV.png";
 import styles from "./Main.module.scss";
 
-const pageTransition = {
-    type: "tween",
-    ease: "anticipate",
-    bounce: 0,
-    damping: 15,
-    duration: 1,
-    delayChildren: 0.2,
-    staggerChildren: 0.2,
-};
 const base = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+};
+
+const children = {
     initial: { scale: 0 },
     animate: { scale: 1 },
     exit: { scale: 0 },
 };
 
+const pageTransition = {
+    type: "spring",
+    ease: "easeIn",
+    bounce: 0,
+    duration: 1,
+    delay: 0.2,
+    delayChildren: 0.5,
+    staggerChildren: 0.3,
+};
 const childTransition = {
     type: "tween",
-    bounce: 0.5,
+    bounce: 0,
     duration: 0.2,
-    delay: 0.2,
-    delayChildren: 0.2,
-    staggerChildren: 0.2,
-};
-const children = {
-    initial: { scale: 0 },
-    animate: { scale: 1 },
-    exit: { scale: 0 },
+    delay: 0,
+    delayChildren: 0.3,
+    staggerChildren: 0.3,
 };
 
 export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
@@ -91,60 +92,111 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                     exit="exit"
                     transition={childTransition}
                 >
-                    <motion.h4
-                        className={styles.fullstack}
+                    <motion.h4 className={styles.fullstack} variants={base} transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 0.4,
+                    delayChildren: 0.6,
+                    staggerChildren: 0.6,}}  >
+                        Full Stack Developer
+                    </motion.h4>
+                    <motion.span className={styles.fullstackLine}  variants={base} transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 0.4,
+                    delayChildren: 0.6,
+                    staggerChildren: 0.6,}}></motion.span>
+                    <motion.h1 className={styles.title} variants={base} transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 0.6,
+                    delayChildren: 0.6,
+                    staggerChildren: 0.6,}}>Oriol Arias Pérez</motion.h1>
+                    <motion.q className={styles.quote} variants={base} transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 0.8,
+                    delayChildren: 0.6,
+                    staggerChildren: 0.6,}}>
+                        Choose a job you love, and you will never have to work a day in your life.
+                    </motion.q>
+                </motion.div>
+                <motion.div  variants={base}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={childTransition}>
+                    <motion.svg
+                        className={styles.image}
                         variants={base}
                         initial="initial"
                         animate="animate"
                         exit="exit"
-                    >Full Stack Developer
-                    </motion.h4>
-                        <span className={styles.fullstackLine}></span>
-                    <motion.h1 variants={children} className={styles.title}>
-                        Oriol Arias Pérez
-                    </motion.h1>
-                    <motion.q variants={children} className={styles.quote}>
-                        Choose a job you love, and you will never have to work a day in your life.
-                    </motion.q>
+                        id="10015.io"
+                        viewBox="0 0 480 480"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xlink="http://www.w3.org/1999/xlink"
+                        transition={{
+                            type: "tween",
+                            duration: 0.2,
+                            delay: 0.6,
+                        }}
+                    >
+                        <defs>
+                            <clipPath id="blob">
+                                <path d="M391,297.5Q306,355,223,384Q140,413,109,326.5Q78,216,99.5,132Q142,20,216,40Q337,58,414,143Q476,240,391,297.5Z" />
+                            </clipPath>
+                        </defs>
+                        <image
+                            x="-110"
+                            y="0"
+                            width="150%"
+                            height="100%"
+                            clipPath="url(#blob)"
+                            href="https://i.postimg.cc/C1hDMz8d/foto-uri-cv-1-2000x1125.png"
+                        ></image>
+                    </motion.svg>
                 </motion.div>
-                <motion.svg
-                    className={styles.image}
+                <motion.div
+                    className={styles.links}
                     variants={children}
                     initial="initial"
                     animate="animate"
                     exit="exit"
-                    id="10015.io"
-                    viewBox="0 0 480 480"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xlink="http://www.w3.org/1999/xlink"
                 >
-                    <defs>
-                        <clipPath id="blob">
-                            <path d="M391,297.5Q306,355,223,384Q140,413,109,326.5Q78,216,99.5,132Q142,20,216,40Q337,58,414,143Q476,240,391,297.5Z" />
-                        </clipPath>
-                    </defs>
-                    <image
-                        x="-110"
-                        y="0"
-                        width="150%"
-                        height="100%"
-                        clipPath="url(#blob)"
-                        href="https://i.postimg.cc/C1hDMz8d/foto-uri-cv-1-2000x1125.png"
-                    ></image>
-                </motion.svg>
-                <div className={styles.links}>
-                    <div className={styles.linksIcons}>
-                        <a href="https://gitlab.com/urioleh" target="_blank" rel="noreferrer">
+                    <motion.div className={styles.linksIcons} variants={children} transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 1,
+                    delayChildren: 0.6,
+                    staggerChildren: 0.6,}}>
+                        <motion.a
+                            variants={children}
+                            href="https://gitlab.com/urioleh"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <IoLogoGitlab className={styles.gitlab} />
-                        </a>
-                        <a href="https://linkedin.com/in/oriol-arias" target="_blank" rel="noreferrer">
+                        </motion.a>
+                        <motion.a
+                            variants={children}
+                            href="https://linkedin.com/in/oriol-arias"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <FaLinkedin className={styles.gitlab} />
-                        </a>
-                    </div>
-                    <a className={styles.download} href={CV} download="CV Oriol Arias -- ¡Contratar!">
+                        </motion.a>
+                    </motion.div>
+                    <motion.a
+                        variants={children}
+                        transition={{ type: "tween", bounce: 0, duration: 0.2, delay: 1.2 }}
+                        className={styles.download}
+                        href={CV}
+                        download="CV Oriol Arias -- ¡Contratar!"
+                    >
                         Download CV
-                    </a>
-                </div>
+                    </motion.a>
+                </motion.div>
             </div>
             <h3 className={styles.right} onClick={() => handleProjects("projects")}>
                 Projects

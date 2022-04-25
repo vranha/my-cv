@@ -22,9 +22,9 @@ const animations = {
 };
 
 const base = {
-    initial: { scale: 0 },
-    animate: { scale: 1 },
-    exit: { scale: 0 },
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
 };
 const children = {
     initial: { scale: 0 },
@@ -36,14 +36,17 @@ const pageTransition = {
     ease: "easeIn",
     bounce: 0,
     duration: 1,
+    delay: 0.2,
+    delayChildren: 0.5,
+    staggerChildren: 0.3,
 };
 const childTransition = {
     type: "tween",
     bounce: 0.5,
     duration: 0.2,
-    delay: 0.2,
+    delay: 0,
     delayChildren: 0.2,
-    staggerChildren: 0.2,
+    staggerChildren: 0.3,
 };
 
 const myHtml = {
@@ -121,71 +124,79 @@ export default function Skills({ exitPage, cycleExitPage }) {
             transition={pageTransition}
         >
             <div className={styles.background}>
-                <motion.div className={styles.containerBasicsNames} variants={base} transition={childTransition}>
-                    {/* <motion.svg variants={children} className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
-	<path fill="#74d8c4" d="M293,337.5Q127,435,125,236.5Q123,38,291,139Q459,240,293,337.5Z" />
-</motion.svg> */}
-                    <motion.svg
-                        className={styles.basicsHtmlName}
-                        variants={children}
-                        whileInView={{
-                            x: [5, -5, 5, -5, 5],
-                            y: [5, -5, -15, -5, 5],
-                            ease: "backInOut",
-                            transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
-
-                            repeat: Infinity,
-                        }}
-                        src={html}
-                        alt="html icone"
-                        viewBox="0 0 1600 500"
-                    >
-                        <path id="curve1" d="M73.5,108.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-                        <text width="500">
-                            <textPath href="#curve1">HTML</textPath>
-                        </text>
-                    </motion.svg>
-
-                    <motion.svg
-                        className={styles.basicsCssName}
-                        variants={children}
-                        whileInView={{
-                            x: [-5, 5, 15, 5, -5],
-                            y: [5, 0, 5, 0, 5],
-                            ease: "backInOut",
-                            transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
-
-                            repeat: Infinity,
-                        }}
-                        src={css}
-                        alt="html icone"
-                        
-                    >
-                        <path id="curve2" d="M73.5,108.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-                        <text width="500">
-                            <textPath href="#curve2">CSS</textPath>
-                        </text>
-                    </motion.svg>
-                    <motion.svg
-                        className={styles.basicsJsName}
-                        variants={children}
-                        whileInView={{
-                            x: [-5, 5, -5, 5, -5],
-                            y: [-15, -5, 5, -5, -15],
-                            ease: "backInOut",
-                            transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
-
-                            repeat: Infinity,
-                        }}
-                        src={js}
-                        alt="html icone"
-                        viewBox="0 0 1400 500"
-                    >
-                        <path id="curve3" d="M73.5,199.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
-                        <text width="500">
-                            <textPath href="#curve3">JAVASCRIPT</textPath>
-                        </text>
-                    </motion.svg>
+                <motion.div variants={base}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={childTransition} >
+                    <motion.div
+                        className={styles.containerBasicsNames}
+                        variants={base} transition={{
+                            type: "tween",
+                            duration: 0.2,
+                            delay: 2,
+                            delayChildren: 0.3,
+                            staggerChildren: 0.3,}}>
+                        {/* <motion.svg variants={children} className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
+                        <path fill="#74d8c4" d="M293,337.5Q127,435,125,236.5Q123,38,291,139Q459,240,293,337.5Z" />
+                    </motion.svg> */}
+                        <motion.svg
+                            className={styles.basicsHtmlName}
+                            variants={base}
+                            whileInView={{
+                                x: [5, -5, 5, -5, 5],
+                                y: [5, -5, -15, -5, 5],
+                                ease: "backInOut",
+                                transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
+                                repeat: Infinity,
+                            }}
+                            src={html}
+                            alt="html icone"
+                            viewBox="0 0 1600 500"
+                        >
+                            <path id="curve1" d="M73.5,108.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                            <text width="500">
+                                <textPath href="#curve1">HTML</textPath>
+                            </text>
+                        </motion.svg>
+                        <motion.svg
+                            className={styles.basicsCssName}
+                            variants={base}
+                            whileInView={{
+                                x: [-5, 5, 15, 5, -5],
+                                y: [5, 0, 5, 0, 5],
+                                ease: "backInOut",
+                                transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
+                                repeat: Infinity,
+                            }}
+                            src={css}
+                            alt="html icone"
+                        >
+                            <path id="curve2" d="M73.5,108.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                            <text width="500">
+                                <textPath href="#curve2">CSS</textPath>
+                            </text>
+                        </motion.svg>
+                        <motion.svg
+                            className={styles.basicsJsName}
+                            variants={base}
+                            whileInView={{
+                                x: [-5, 5, -5, 5, -5],
+                                y: [-15, -5, 5, -5, -15],
+                                ease: "backInOut",
+                                transition: { duration: 5, repeat: Infinity, repeatType: "loop" },
+                                repeat: Infinity,
+                            }}
+                            src={js}
+                            alt="html icone"
+                            viewBox="0 0 1400 500"
+                        >
+                            <path id="curve3" d="M73.5,199.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
+                            <text width="500">
+                                <textPath href="#curve3">JAVASCRIPT</textPath>
+                            </text>
+                        </motion.svg>
+                    </motion.div>
                 </motion.div>
                 <motion.div
                     className={styles.center}
@@ -195,17 +206,39 @@ export default function Skills({ exitPage, cycleExitPage }) {
                     exit="exit"
                     transition={childTransition}
                 >
-                    <h1>
+                    <motion.h1
+                    variants={children}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 0.4,
+                    }}>
                         My developer <strong>skills</strong>
-                    </h1>
-                    <motion.div className={styles.containerBasics} variants={base} transition={childTransition}>
-                        <img className={styles.backSvg} src={skills} alt="" />
+                    </motion.h1>
+                    <motion.div className={styles.containerBasics} variants={base} transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 2,
+                    delayChildren: 0.3,
+                    staggerChildren: 0.3,}}>
+                        <motion.img className={styles.backSvg} src={skills} alt="" variants={base}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 2.2,
+                    }}/>
                         {/* <motion.svg variants={children} className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
 	<path fill="#74d8c4" d="M293,337.5Q127,435,125,236.5Q123,38,291,139Q459,240,293,337.5Z" />
 </motion.svg> */}
                         <motion.img
                             className={styles.basicsHtml}
-                            variants={children}
+                            variants={base}
                             whileInView={{
                                 x: [5, -5, 5, -5, 5],
                                 y: [5, -5, -15, -5, 5],
@@ -220,7 +253,7 @@ export default function Skills({ exitPage, cycleExitPage }) {
 
                         <motion.img
                             className={styles.basicsCss}
-                            variants={children}
+                            variants={base}
                             whileInView={{
                                 x: [-5, 5, 15, 5, -5],
                                 y: [5, 0, 5, 0, 5],
@@ -234,7 +267,7 @@ export default function Skills({ exitPage, cycleExitPage }) {
                         />
                         <motion.img
                             className={styles.basicsJs}
-                            variants={children}
+                            variants={base}
                             whileInView={{
                                 x: [-5, 5, -5, 5, -5],
                                 y: [-15, -5, 5, -5, -15],
@@ -248,10 +281,25 @@ export default function Skills({ exitPage, cycleExitPage }) {
                         />
                     </motion.div>
                     <motion.div className={styles.centerDev}>
-                        <motion.img src={centerDev} alt="" />
-                        <motion.h3 className={styles.centerDevTitle}>{htmlDev}</motion.h3>
+                        <motion.img variants={children} src={centerDev} alt="" 
+                        transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 1.9,
+                    }}></motion.img>
+                        <motion.h3 className={styles.centerDevTitle}variants={children} src={centerDev} alt="" 
+                        transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 1.9,
+                    }}>{htmlDev}</motion.h3>
                     </motion.div>
-                    <motion.div className={styles.containerDev} variants={base} transition={childTransition}>
+                    <motion.div className={styles.containerDev} variants={base} transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 0,
+                    delayChildren: 0.1,
+                    staggerChildren: 0.1,}}>
                         <motion.img
                             onClick={() => devClick(react, "React")}
                             ref={reactRef}

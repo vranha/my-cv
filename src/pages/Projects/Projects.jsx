@@ -29,10 +29,10 @@ const pageTransition = {
 const childTransition = {
     type: "tween",
     bounce: 0.5,
-    duration: .2,
-    delay:.1,
-    delayChildren: 0.5,
-    staggerChildren: 0.3
+    duration: 0.2,
+    delay: 0.2,
+    delayChildren: 0.2,
+    staggerChildren: 0.2
 }
 
 export default function Projects({exitPage, cycleExitPage  }) {
