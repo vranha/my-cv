@@ -41,7 +41,7 @@ const itemsB = [3, 1, 4, 2]
 const itemsC = [4, 3, 2, 1]
 const itemsD = [2, 4, 1, 3]
 
-const colors = [{color:"#5B85AA", word: "Creativity 🦄"},{color: "#A93F55", word: "Passion 🌹"},{color: "#417B5A", word: "Effort 💪"},{color: "#E5A4CB", word: "Attention 👀"}]
+const colors = [{color:"linear-gradient(135deg, #5ee7df 0%, #b490ca 100%)", word: "Creativity 🦄"},{color: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)", word: "Passion 🌹"},{color: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)", word: "Effort 💪"},{color: "linear-gradient(135deg, #FFB7FF 0%, #662C91 100%)", word: "Attention 👀"}]
 
 
 export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
@@ -168,7 +168,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                                 marginTop: "130px",
                                 marginLeft: "30px",
                                 boxShadow: "0 0 20px rgba(0, 0, 0, 0.271)",
-                                backgroundColor: colors[item -1].color,
+                                background: colors[item -1].color,
                                                      }}
                                                      key={item}
                                                      layout

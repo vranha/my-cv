@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styles from "./Skills.module.scss";
 import Typical from 'react-typical'
+import Typed from "typed.js";
 import html from "../../assets/html.png";
 import css from "../../assets/css.png";
 import js from "../../assets/js.png";
@@ -14,7 +15,7 @@ import laravel from "../../assets/laravel.png";
 import bootstrap from "../../assets/bootstrap.png";
 import framermotion from "../../assets/framermotion.png";
 import skills from "../../assets/skills.svg";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const animations = {
     initial: { x: "-100%" },
@@ -74,6 +75,28 @@ export default function Skills({ exitPage, cycleExitPage }) {
     const laravelRef = useRef();
     const bootstrapRef = useRef();
     const framermotionRef = useRef();
+
+    const el = useRef(null);
+
+    useEffect(() => {
+      const typed = new Typed(el.current, {
+        strings: ["Typed.js", "Toastify", "email.js", "bootstrap", 'chakra'], // Strings to display
+        // Speed settings, try diffrent values untill you get good results
+        startDelay: 300,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 1500,
+        showCursor: true,
+        cursorChar: "_",
+        smartBackspace: true,
+        loop: true,
+      });
+  
+      // Destropying
+      return () => {
+        typed.destroy();
+      };
+    }, []);
 
     const handleMain = () => {
         navigate("/main");
@@ -236,12 +259,7 @@ export default function Skills({ exitPage, cycleExitPage }) {
                     }}/>
                      <div className={styles.atributesContainerPrev}>
                          <h3> I also use:
-                         <Typical
-                                className={styles.typical}
-                                 steps={['Typing', 2300, 'Toastify', 2300, 'emailjs', 2300, 'bootstrap', 2300, 'chakra', 2300]}
-                                 loop={Infinity}
-                                 wrapper="p"
-                               /></h3>
+                         <span ref={el}></span></h3>
                      </div>
                         {/* <motion.svg variants={children} className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
 	<path fill="#74d8c4" d="M293,337.5Q127,435,125,236.5Q123,38,291,139Q459,240,293,337.5Z" />

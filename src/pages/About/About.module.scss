@@ -1,5 +1,4 @@
-
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,126 +9,215 @@
 .container::before {
     content: "";
     position: fixed;
-    
+
     right: 30%;
-    bottom:20%;
+    bottom: 20%;
     z-index: -1;
-  
+
     display: block;
-    background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
-    background-size:cover;
+    background-image: url("https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg");
+    background-size: cover;
     transform: scale(0.5);
     width: 100%;
     height: 100vh;
-  
+
     -webkit-filter: blur(100px);
     -moz-filter: blur(100px);
     -o-filter: blur(100px);
     -ms-filter: blur(100px);
     filter: blur(100px);
     opacity: 0.3;
-  }
+}
 
 .container::after {
     content: "";
     position: fixed;
-    
-    left:30%;
-    top:20%;
+
+    left: 30%;
+    top: 20%;
     z-index: -1;
-  
+
     display: block;
-    background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
-    background-size:cover;
+    background-image: url("https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg");
+    background-size: cover;
     transform: scale(1.2);
     width: 100%;
     height: 100vh;
-  
+
     -webkit-filter: blur(100px);
     -moz-filter: blur(100px);
     -o-filter: blur(100px);
     -ms-filter: blur(100px);
     filter: blur(100px) hue-rotate(50deg);
     opacity: 0.3;
-  }
+}
 
-.background{
+.background {
     // border: 4px solid #ffbf3588;
     border-radius: 10px;
     height: 75vh;
     width: 75vw;
     box-shadow: 0px 20px 50px 10px rgba(0, 0, 0, 0.247);
-    display: flex;
+    display: grid;
+    grid-template-areas:
+        "exp stu"
+        "vid  vid";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
     justify-content: center;
+    align-items: space-between;
     margin-left: 60px;
     background: linear-gradient(rgba(255, 255, 255, 0.527), rgba(255, 255, 255, 0.534)), url(../../assets/4853433.jpg);
     background-position: right;
     background-size: 200%;
 
-    
-    .studies{
-      position: absolute;
-      top: 10%;
-      right: 50%;
-      transform: translate(50%, -50%);
-      z-index:3;
-  
-      strong{
-        color:#f3b52f  ;
-      }
+    .studiesContainer {
+        grid-area: stu;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: 50px;
+        .studies {
+            z-index: 3;
+            margin-top: 40px;
+            strong {
+              color: #f3b52f;
+            }
+          }
+          .studieDiv {
+            display: flex;
+            flex-direction: column;
+          gap: 30px;
+          justify-content: center;
+          align-items: center;
+          .studie1,
+          .studie2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 10px;
+              border: 2px solid #f3b52f;
+              border-radius: 10px;
+              width: 250px;
+              height: 100px;
+              background: rgb(255, 255, 255);
+              transition: .3s ease-in-out;
+              box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.171);
+
+              &:hover{
+                background: #6f697e;
+                color: white;
+                border-color: #6f697e;
+              }
+
+              h3{
+                transition: .3s ease-in-out;
+              }
+
+              &:hover h3{
+                color: #f3b52f;
+              }
+            }
+        }
     }
-    .experience{
-      position: absolute;
-      top: 10%;
-      right: 50%;
-      transform: translate(50%, -50%);
-      z-index:3;
-  
-      strong{
-        color:#f3b52f  ;
-      }
+
+    .experienceContainer {
+        grid-area: exp;
+        .experience {
+            z-index: 3;
+            margin-top: 40px;
+            strong {
+                color: #f3b52f;
+            }
+        }
+
+        .cardWrapStyle {
+            position: relative;
+            width: 280px;
+            height: 170px;
+            margin: 100px auto;
+        }
+
+        .cardStyle {
+            position: absolute;
+            width: 280px;
+            height: 170px;
+            border-radius: 8px;
+            transform-origin: top center;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.171);
+
+            h3 {
+                color: white;
+                strong {
+                    color: #f3b52f;
+                }
+            }
+
+            div {
+                margin-top: -15px;
+                font-size:25px;
+            }
+
+            h4 {
+                color: #ffe2a4;
+                strong {
+                    color: white;
+                }
+            }
+        }
     }
-    
-  }
+    .videosContainer {
+        grid-area: vid;
+        display: flex;
+        justify-content: center;
+        .videos {
+            height: 200px;
+            width: 200px;
+            background-color: red;
 
-.center{
-   
+            z-index: 3;
+        }
+    }
 }
 
-.left{
-  display: inline-block;
-  position: fixed;
-  top: 50%;
-  left: 5%;
-  transform: translate(-50%, -50%);
-  padding: 20px 25px;
-  min-height: 320px;
-  line-height: 0.8em;
-  border-radius: 10px;
-  font-size:20px;
-  font-weight: bold;
-  border: 2px solid #6f697e;
-  background-color: white;
-  cursor: pointer;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  transition:0.3s ease-in-out;
-  
+.left {
+    display: inline-block;
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    padding: 20px 25px;
+    min-height: 320px;
+    line-height: 0.8em;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #6f697e;
+    background-color: white;
+    cursor: pointer;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    transition: 0.3s ease-in-out;
 
-  &:hover{
-    color: #ffbf35;
-    background-color: #6f697e;
-    
-}
+    &:hover {
+        color: #ffbf35;
+        background-color: #6f697e;
+    }
 
-&:before{
-  content:'⬅';
-  margin-bottom: 60px;
-  transition:0s ease-in-out;
-}
-&:after{
-  content:'⬅';
-  margin-top: 60px;
-  transition:0s ease-in-out;
-}
+    &:before {
+        content: "⬅";
+        margin-bottom: 60px;
+        transition: 0s ease-in-out;
+    }
+    &:after {
+        content: "⬅";
+        margin-top: 60px;
+        transition: 0s ease-in-out;
+    }
 }

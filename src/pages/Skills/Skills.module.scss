@@ -158,13 +158,12 @@
         text-align: start;
     }
     
-    .typical{
-        // margin: 20px;
+   span{
         width:300px;
-        text-align: start;
-        position: relative; 
-        left:110px;
-        bottom: 20px;
+        // text-align: start;
+        margin-left:10px;
+        margin-right:-8px;
+        letter-spacing: 1px;
         color: #ffbf35;
     }
 }
