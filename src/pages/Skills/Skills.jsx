@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styles from "./Skills.module.scss";
-import Typical from 'react-typical'
 import Typed from "typed.js";
 import html from "../../assets/html.png";
 import css from "../../assets/css.png";
