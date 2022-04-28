@@ -108,7 +108,7 @@ export default function Contactme({ exitY, cycleExitY }) {
                         
                     </motion.div>
                     <motion.div className={styles.right} variants={children} >
-                    <h1>Contact me</h1>
+                    <h1>Contact <strong>me</strong></h1>
                     {!done ? <form ref={form} onSubmit={sendEmail}>
                         <input type="text" name="user_name" className={styles.user} placeholder="Name" required />
                         <input type="email" name="user_email" className={styles.user} placeholder="E-mail"required />

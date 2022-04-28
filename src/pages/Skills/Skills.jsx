@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import styles from "./Skills.module.scss";
+import Typical from 'react-typical'
 import html from "../../assets/html.png";
 import css from "../../assets/css.png";
 import js from "../../assets/js.png";
@@ -233,6 +234,15 @@ export default function Skills({ exitPage, cycleExitPage }) {
                     duration: 0.2,
                     delay: 2.2,
                     }}/>
+                     <div className={styles.atributesContainerPrev}>
+                         <h3> I also use:
+                         <Typical
+                                className={styles.typical}
+                                 steps={['Typing', 2300, 'Toastify', 2300, 'emailjs', 2300, 'bootstrap', 2300, 'chakra', 2300]}
+                                 loop={Infinity}
+                                 wrapper="p"
+                               /></h3>
+                     </div>
                         {/* <motion.svg variants={children} className={styles.backBasics} id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" >
 	<path fill="#74d8c4" d="M293,337.5Q127,435,125,236.5Q123,38,291,139Q459,240,293,337.5Z" />
 </motion.svg> */}
@@ -308,7 +318,7 @@ export default function Skills({ exitPage, cycleExitPage }) {
                             whileInView={{
                                 x: [0, 110, 170, 110, 0, -110, -170, -110, -0],
                                 y: [0, 65, 175, 290, 358, 290, 175, 65, 0],
-                                ease: "backIn",
+                                ease: "backInOut",
                                 transition: { duration: 35, repeat: Infinity, repeatType: "loop" },
 
                                 repeat: Infinity,

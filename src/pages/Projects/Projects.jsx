@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Projects.module.scss"
 
 const animations = {
-    initial:{  x:"100%" },
-    animate:{  x:0},
-    exit:{  x:"100%"},
+    initial:{  y:"100%"},
+    animate:{  y:0},
+    exit:{  y:"100%"},
 
 }
 const base = {
@@ -24,32 +24,45 @@ const pageTransition = {
     type: "spring",
     ease: "easeIn",
     bounce: 0,
-    duration: 1
-}
+    duration: 1,
+    delay: 0.2,
+    delayChildren: 0.5,
+    staggerChildren: 0.3,
+};
 const childTransition = {
     type: "tween",
     bounce: 0.5,
     duration: 0.2,
-    delay: 0.2,
+    delay: 0.1,
     delayChildren: 0.2,
-    staggerChildren: 0.2
-}
+    staggerChildren: 0.3,
+};
 
-export default function Projects({exitPage, cycleExitPage  }) {
+export default function Projects({exitY, cycleExitY   }) {
 
     const navigate = useNavigate();
 
     const handleMain = () => {
         navigate('/main')
-        cycleExitPage(1);
+        cycleExitY(1);
     }
 
     return (
-        <motion.div  className={styles.container} variants={animations} initial="initial" animate="animate" exit="exit" transition={pageTransition}>
-            <motion.div className={styles.center} variants={base} initial="initial" animate="animate" exit="exit" transition={childTransition}>
-                <h1>projects</h1>
-                 <h3 className={styles.left} onClick={handleMain} variants={children}>Main</h3>
-            </motion.div>
+        <motion.div
+            className={styles.container}
+            variants={animations}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={pageTransition}
+        >
+            <div className={styles.background}>
+               
+            </div>
+                    <h3 onClick={handleMain} className={styles.up}>
+                        Main
+                    </h3>
+       
         </motion.div>
     );
 }

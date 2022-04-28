@@ -2,8 +2,9 @@ import { motion, useCycle } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { IoLogoGitlab } from "react-icons/io5";
 import { FaLinkedin } from "react-icons/fa";
-import CV from "../../assets/CV.png";
-import styles from "./Main.module.scss";
+import CV from "../../assets/CV.png"; 
+import { useEffect } from "react";
+import styles from "./Main.module.scss";      
 
 const base = {
     initial: { opacity: 0 },
@@ -35,13 +36,29 @@ const childTransition = {
     staggerChildren: 0.3,
 };
 
+const itemsA = [1, 2, 3, 4]
+const itemsB = [3, 1, 4, 2]
+const itemsC = [4, 3, 2, 1]
+const itemsD = [2, 4, 1, 3]
+
+const colors = [{color:"#5B85AA", word: "Creativity 🦄"},{color: "#A93F55", word: "Passion 🌹"},{color: "#417B5A", word: "Effort 💪"},{color: "#E5A4CB", word: "Attention 👀"}]
+
+
 export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
     const navigate = useNavigate();
     const [initialPage, cycleInitialPage] = useCycle("0%", "-100%", "100%");
     const [initialY, cycleInitialY] = useCycle("0%", "-100%", "100%");
 
+    const [items, setItems] = useCycle(itemsA, itemsC, itemsB, itemsD,)
+    
+
+    useEffect(() => {
+        setTimeout(() => setItems(), 2200)
+       
+    }, [items, setItems])
+
     const handleProjects = (page) => {
-        if (page === "about") {
+        if (page === "projects") {
             cycleExitPage(0);
             cycleInitialPage(0);
             cycleExitY(1);
@@ -59,7 +76,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
             cycleExitY(2);
             cycleInitialY(2);
             navigate(`/${page}`);
-        } else if (page === "projects") {
+        } else if (page === "about") {
             cycleExitPage(1);
             cycleInitialPage(1);
             cycleExitY(0);
@@ -92,6 +109,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                     exit="exit"
                     transition={childTransition}
                 >
+
                     <motion.h4 className={styles.fullstack} variants={base} transition={{    
                     type: "tween",                    
                     duration: 0.2,
@@ -121,11 +139,50 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                         Choose a job you love, and you will never have to work a day in your life.
                     </motion.q>
                 </motion.div>
-                <motion.div  variants={base}
+                <motion.div  
+                    className={styles.imageContainer}
+                    variants={base}
                     initial="initial"
                     animate="animate"
                     exit="exit"
                     transition={childTransition}>
+                         <div className={styles.atributesContainer} > 
+                             <div className={styles.atributesHidden}
+                                             style={{
+                                                 display: "grid",
+                                                 gridTemplateRows: "auto auto auto auto ",
+                                                 
+                                                 gridGap: 200,
+                                             }}
+                                         >
+                                             {items.map((item, i) => (
+                                                 <motion.div
+                                                     style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                width: 140,
+                                height: 40,
+                                borderRadius: 10,
+                                color: "white",
+                                marginTop: "130px",
+                                marginLeft: "30px",
+                                boxShadow: "0 0 20px rgba(0, 0, 0, 0.271)",
+                                backgroundColor: colors[item -1].color,
+                                                     }}
+                                                     key={item}
+                                                     layout
+                                                     transition={{
+                                type: "spring",
+                                stiffness: 350,
+                                damping: 30,
+                                                     }}
+                                                 >
+                                                     <h3>{colors[item -1].word}</h3>
+                                                 </motion.div>
+                                ))}
+                                         </div>
+                         </div>    
                     <motion.svg
                         className={styles.image}
                         variants={base}
@@ -198,11 +255,11 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                     </motion.a>
                 </motion.div>
             </div>
-            <h3 className={styles.right} onClick={() => handleProjects("projects")}>
-                Projects
-            </h3>
-            <h3 className={styles.down} onClick={() => handleProjects("about")}>
+            <h3 className={styles.right} onClick={() => handleProjects("about")}>
                 About
+            </h3>
+            <h3 className={styles.down} onClick={() => handleProjects("projects")}>
+                Projects
             </h3>
         </motion.div>
     );
