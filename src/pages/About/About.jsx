@@ -1,9 +1,18 @@
 import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom";
 import move from "lodash-move";
+import ps from "../../assets/ps.svg"; 
+import lr from "../../assets/lr.png"; 
+import pr from "../../assets/pr.webp"; 
+import pm from "../../assets/pm.png"; 
+import c1 from "../../assets/c1.png"; 
+import fc from "../../assets/fc.png"; 
+import ae from "../../assets/ae.png"; 
 import styles from "./About.module.scss"
 import { useState } from "react";
 
+
+const icones = [{image: ps, name: 'photoshop'}, {image: lr, name: 'lightroom'}, {image: pr, name: 'premiere'}, {image: pm, name: 'postman'},  {image: c1, name: 'capture one'}, {image: fc, name: 'final cut'}, {image: ae, name: 'after effects'}]
 
 const animations = {
     initial:{  x:"100%" },
@@ -42,6 +51,9 @@ const childTransition = {
 const CARD_OBJECT = [{color: "linear-gradient(135deg, rgba(132,163,228,1) 0%, rgba(192,143,227,1) 100%)", title: "Specialist Salesman", place: {one: "FNAC", two: "ELC"}, icon: "🎧"}, {color:"linear-gradient(135deg, rgba(154,221,126,1) 0%, rgba(171,158,93,1) 100%)", title: 'Cameraman and Editor', place: {one: "BETEVÉ", two: "i3tv"}, icon : '📹'}, {color: " linear-gradient(135deg, rgba(228,132,221,1) 0%, rgba(227,170,143,1) 100%)", title: 'Guitar Teacher', place: 'Les Mandolines', icon: '🎸'}, {color: "linear-gradient(135deg, rgba(132,226,228,1) 0%, rgba(117,164,124,1) 100%)", title: 'Stage Builder', place: 'Viu el teatre', icon: '👨‍🔧'}];
 const CARD_OFFSET = 10;
 const SCALE_FACTOR = 0.06;
+
+
+
 
 export default function About({exitPage, cycleExitPage  }) {
 
@@ -126,7 +138,14 @@ export default function About({exitPage, cycleExitPage  }) {
             </div>
             </div>
             <div className={styles.videosContainer}>
-              <div className={styles.videos}></div>
+            <h1 className={styles.videosTitle}>Other abilities</h1>
+              <div className={styles.videos}>
+                {icones.map((icon) => {
+                  return(
+                  <img src={icon.image} alt={icon.name} key={icon.name} />
+                  )
+                })}
+              </div>
             </div>
             </div>
                     <h3 onClick={handleMain} className={styles.left}>

@@ -63,7 +63,7 @@
         "exp stu"
         "vid  vid";
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 2fr 1.4fr;
     justify-content: center;
     align-items: space-between;
     margin-left: 60px;
@@ -103,13 +103,16 @@
               height: 100px;
               background: rgb(255, 255, 255);
               transition: .3s ease-in-out;
-              box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.171);
+              box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.171);
               cursor: default;
 
               &:hover{
                 background: #6f697e;
                 color: white;
                 border-color: #6f697e;
+                transform: scale(1.1) translateY(-15px);
+                box-shadow: 0px 8px 7px 2px rgba(0, 0, 0, 0.308);
+
               }
 
               h3{
@@ -177,13 +180,31 @@
     .videosContainer {
         grid-area: vid;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        .videosTitle{
+          width: 100%;
+          margin-bottom: 30px;          
+        }
         .videos {
-            height: 200px;
-            width: 200px;
-            background-color: red;
+        z-index: 3;
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat( auto-fit, 60px);     
+        gap: 15px;
+        justify-content: center;
+        align-items:center;
+        margin: 0 auto;
+          img{
+            height: 60px;
+            transition: 0.2s ease-in-out;
+            &:hover{
+              transform: translateY(-10px)
+            }
 
-            z-index: 3;
+          }
+
         }
     }
 }
