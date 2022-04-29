@@ -79,7 +79,7 @@ export default function Skills({ exitPage, cycleExitPage }) {
 
     useEffect(() => {
       const typed = new Typed(el.current, {
-        strings: ["Typed.js", "Toastify", "email.js", "bootstrap", 'chakra'], // Strings to display
+        strings: ["Typed.js",'redux', "Toastify","passport", "email.js", 'chakra','express', "axios", 'Tippy.js','react-color',"nodemailer",'react-paginate', 'InputEmoji','mdb', "react-datepicker","react-scroll",'react-reveal', 'react-infinite-scroll',], // Strings to display
         // Speed settings, try diffrent values untill you get good results
         startDelay: 300,
         typeSpeed: 100,
@@ -90,12 +90,17 @@ export default function Skills({ exitPage, cycleExitPage }) {
         smartBackspace: true,
         loop: true,
       });
+      
   
       // Destropying
       return () => {
         typed.destroy();
       };
     }, []);
+
+
+    document.title = " 🏅 My skills";
+
 
     const handleMain = () => {
         navigate("/main");

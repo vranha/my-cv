@@ -42,6 +42,8 @@ export default function Projects({exitY, cycleExitY   }) {
 
     const navigate = useNavigate();
 
+    document.title = "🚀 My works";
+
     const handleMain = () => {
         navigate('/main')
         cycleExitY(1);

@@ -188,16 +188,16 @@ justify-content: center;
    .user{
     width: 20rem;
     height: 2.5rem;
-    padding: 0.3rem;
+    padding: 0.6rem;
     outline: none;
     border: 2px solid #ffbf35;
     border-radius: 8px;
     font-size: 16px;
     background-color: transparent;
-    color:white;
+    color:black;
 
     &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: rgb(126, 126, 126);
+      color: #6f697e;
       opacity: 1; /* Firefox */
     }
   }

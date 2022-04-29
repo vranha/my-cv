@@ -4,4 +4,9 @@
 
 body{
   background: white;
+
+  ::selection{
+    color:rgb(108, 153, 130);
+    background-color:rgb(40, 40, 70);
+  }
 }

@@ -1,6 +1,7 @@
 import { motion, useCycle } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { IoLogoGitlab } from "react-icons/io5";
+import { IoLogoGithub } from "react-icons/io5";
 import { FaLinkedin } from "react-icons/fa";
 import CV from "../../assets/CV.png"; 
 import { useEffect } from "react";
@@ -50,6 +51,8 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
     const [initialY, cycleInitialY] = useCycle("0%", "-100%", "100%");
 
     const [items, setItems] = useCycle(itemsA, itemsC, itemsB, itemsD,)
+
+    document.title = "🍀 Oriol Arias CV";
     
 
     useEffect(() => {
@@ -146,7 +149,16 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                     animate="animate"
                     exit="exit"
                     transition={childTransition}>
-                         <div className={styles.atributesContainer} > 
+                         <motion.div className={styles.atributesContainer}
+                         variants={base}
+                         initial="initial"
+                         animate="animate"
+                         exit="exit"
+                         transition={{    
+                            type: "tween",                    
+                            duration: 0.2,
+                            delay: 0.6,
+                            }} > 
                              <div className={styles.atributesHidden}
                                              style={{
                                                  display: "grid",
@@ -182,7 +194,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                                                  </motion.div>
                                 ))}
                                          </div>
-                         </div>    
+                         </motion.div>    
                     <motion.svg
                         className={styles.image}
                         variants={base}
@@ -194,10 +206,11 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                         xmlns="http://www.w3.org/2000/svg"
                         xlink="http://www.w3.org/1999/xlink"
                         transition={{
-                            type: "tween",
-                            duration: 0.2,
+                            type: "spring",
+                            stiffness: 350,
+                            damping: 30,
                             delay: 0.6,
-                        }}
+                                                 }}
                     >
                         <defs>
                             <clipPath id="blob">
@@ -216,7 +229,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                 </motion.div>
                 <motion.div
                     className={styles.links}
-                    variants={children}
+                    variants={base}
                     initial="initial"
                     animate="animate"
                     exit="exit"
@@ -224,9 +237,9 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                     <motion.div className={styles.linksIcons} variants={children} transition={{    
                     type: "tween",                    
                     duration: 0.2,
-                    delay: 1,
-                    delayChildren: 0.6,
-                    staggerChildren: 0.6,}}>
+                    delay: 0.8,
+                    delayChildren: 0.8,
+                    staggerChildren: 0.4,}}>
                         <motion.a
                             variants={children}
                             href="https://gitlab.com/urioleh"
@@ -234,6 +247,14 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                             rel="noreferrer"
                         >
                             <IoLogoGitlab className={styles.gitlab} />
+                        </motion.a>
+                        <motion.a
+                            variants={children}
+                            href="https://github.com/vranha"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <IoLogoGithub className={styles.gitlab} />
                         </motion.a>
                         <motion.a
                             variants={children}
@@ -246,7 +267,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                     </motion.div>
                     <motion.a
                         variants={children}
-                        transition={{ type: "tween", bounce: 0, duration: 0.2, delay: 1.2 }}
+                        transition={{ type: "tween", bounce: 0, duration: 0.2, delay: 1.6 }}
                         className={styles.download}
                         href={CV}
                         download="CV Oriol Arias -- ¡Contratar!"

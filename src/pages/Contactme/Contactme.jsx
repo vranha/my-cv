@@ -45,6 +45,8 @@ const childTransition = {
 export default function Contactme({ exitY, cycleExitY }) {
     const navigate = useNavigate();
 
+    document.title = "🥰 Hire me";
+
     const handleMain = () => {
         navigate("/main");
         cycleExitY(2);
