@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,110 +9,205 @@
 .container::before {
     content: "";
     position: fixed;
-    
+
     left: 15%;
-    bottom:10%;
+    bottom: 10%;
     z-index: -1;
-  
+
     display: block;
-    background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
-    background-size:cover;
-    transform: scale(0.6) ;
+    background-image: url("https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg");
+    background-size: cover;
+    transform: scale(0.6);
     width: 100%;
     height: 100vh;
-  
+
     -webkit-filter: blur(100px);
     -moz-filter: blur(100px);
     -o-filter: blur(100px);
     -ms-filter: blur(100px);
     filter: blur(100px) hue-rotate(300deg);
     opacity: 0.2;
-  }
+}
 
 .container::after {
     content: "";
     position: fixed;
-    
+
     right: 30%;
-    top:20%;
+    top: 20%;
     z-index: -1;
-  
+
     display: block;
-    background-image: url('https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg');
-    background-size:cover;
+    background-image: url("https://library.kissclipart.com/20180914/wgw/kissclipart-circles-design-vector-clipart-clip-art-1362023b0ce932d3.jpg");
+    background-size: cover;
     transform: scale(1) scaleY(1);
     width: 100%;
     height: 100vh;
-  
+
     -webkit-filter: blur(100px);
     -moz-filter: blur(100px);
     -o-filter: blur(100px);
     -ms-filter: blur(100px);
     filter: blur(100px) hue-rotate(150deg);
     opacity: 0.3;
-  }
+}
 
-.background{
+.background {
     // border: 4px solid #ffbf3588;
     border-radius: 10px;
     height: 75vh;
     width: 75vw;
     box-shadow: 0px 20px 50px 10px rgba(0, 0, 0, 0.247);
-    display: flex;
+    display: grid;
     justify-content: center;
+    grid-template-rows: 1fr 1fr;
     margin-top: 60px;
     background: linear-gradient(rgba(255, 255, 255, 0.527), rgba(255, 255, 255, 0.534)), url(../../assets/4853433.jpg);
-    background-position:left bottom;
+    background-position: left bottom;
 
-    h1{
-      position: absolute;
-      top: 10%;
-      right: 50%;
-      transform: translate(50%, -50%);
-      z-index:3;
-  
-      strong{
-        color:#f3b52f  ;
-      }
+    h1 {
+
+        z-index: 3;
+        margin: 30px;
+        strong {
+            color: #f3b52f;
+        }
     }
-  
-  }
 
-.center{
-   
+    .containerProjects {
+        .projectStructure {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4vh 6vw;
+            .project {
+              width:auto;
+              height:auto;
+              max-height: 190px;
+              margin: 20px 20px 0px 20px;
+              overflow: hidden;
+              position: relative;
+              border-radius: 3%;
+              box-shadow: 0 5px 30px rgba(0, 0, 0, 0.349);
+              transition: all 0.3s ease-in-out;
+              perspective: 1px;
+
+              &:hover {
+                transform:scale(1.3);
+                z-index: 9;
+                
+              }
+              &:hover img{
+                transform:scale(1.2, 1.2);
+                z-index: 9
+              }
+              &:hover .textBox{
+                opacity: 0;
+              }
+
+              h4 {
+                content: attr(data-hover);
+                opacity: 0;
+                width: 120px;
+                background-color: #6f697ed5;
+                color: #fff;
+                text-align: center;
+                border-radius: 3px;
+                padding: 10px 0px;
+                transition: 0.3s ease-in-out;
+                cursor: pointer;
+                position: absolute;
+                bottom: 0%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1.3) ;
+                z-index: 10;
+                perspective: 1px;
+              }
+
+              &:hover h4 {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+              }
+
+                .imgProjects {
+                  height: 100%;
+                  width: 100%;
+                  margin-bottom: -5px;
+                  object-fit: contain;
+                  border-radius: 3%;
+                  z-index: 2;
+                  transition: all 0.3s ease-in-out;
+               
+
+                  &:hover{
+                    transform:scale(1.2, 1.2);
+                    // z-index: 9
+                  }
+                }
+
+                .textBox{
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  z-index: 3;
+                  padding: 10px;
+                  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.678) 0%,  rgba(0, 0, 0, 0.568) 40%,#9b8ebd8e 100%);
+                  opacity: 1;
+                  transition:  0.3s ease-in-out;
+                  cursor: pointer;  
+                  letter-spacing: 2px;
+                  h2{
+                    color: #f3b52f;
+                    margin:20px;
+                  }
+
+                  p{
+                    color: white;
+                    font-weight: bold;
+                  }
+
+                  
+                }
+            }
+        }
+    }
 }
 
-.up{
-  position: fixed;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px 30px;
-  min-width: 270px;
-  line-height: 0.8em;
-  // padding-top:25px;
-  border-radius: 10px;
-  font-size:20px;
-  font-weight: bold;
-  border:2px solid #6f697e;
-  background-color: white;
-  cursor: pointer;
-  transition:0.3s ease-in-out;
-
-  &:hover{
-    color: #ffbf35;
-    background-color: #6f697e;
-    
+.center {
 }
 
-&:before{
-  content:'⬆';
-  margin-right: 60px;
-  transition:0s ease-in-out;
-}
-&:after{
-  content:'⬆';
-  margin-left: 60px;
-  transition:0s ease-in-out;
-}
+.up {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    min-width: 270px;
+    line-height: 0.8em;
+    // padding-top:25px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #6f697e;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+        color: #ffbf35;
+        background-color: #6f697e;
+    }
+
+    &:before {
+        content: "⬆";
+        margin-right: 60px;
+        transition: 0s ease-in-out;
+    }
+    &:after {
+        content: "⬆";
+        margin-left: 60px;
+        transition: 0s ease-in-out;
+    }
 }

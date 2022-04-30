@@ -1,5 +1,9 @@
 import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom";
+import CocktailsClub from "../../assets/CocktailsClub.webp";
+import MoviesHouse from "../../assets/MoviesHouse.webp";
+import ArcaneProject from "../../assets/ArcaneProject.webp";
+import BlogLaravel from "../../assets/BlogLaravel.webp";
 import styles from "./Projects.module.scss"
 
 const animations = {
@@ -59,7 +63,56 @@ export default function Projects({exitY, cycleExitY   }) {
             transition={pageTransition}
         >
             <div className={styles.background}>
-               
+        <div className={styles.containerProjects}>
+        <motion.h1
+                    variants={children}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{    
+                    type: "tween",                    
+                    duration: 0.2,
+                    delay: 0.4,
+                    }}>
+                        My <strong>Projects</strong>
+                    </motion.h1>
+            <div className={styles.projectStructure}>
+                <div className={styles.project}  onClick={() => {console.log('caca')}}>
+                    <img className={styles.imgProjects} src={CocktailsClub} alt="CocktailsClub" />
+                    <div className={styles.textBox}>
+                        <h2>Cocktails Club</h2>
+                        <p>JSX / React</p>
+                    </div>
+                        <h4>Open</h4>
+                </div>
+                <div className={styles.project} data-hover="Expand">
+                    <img className={styles.imgProjects} src={MoviesHouse} alt="MoviesHouse" />
+                    <div className={styles.textBox}>
+                        <h2>Movies House</h2>
+                        <p>JSX / React</p>
+                    </div>
+                    <h4>Open</h4>
+                </div>
+                <div className={styles.project} data-hover="Expand">
+                    <img className={styles.imgProjects} src={ArcaneProject} alt="ArcaneProject" />
+                    <div className={styles.textBox}>
+                        <h2>Arcane Project</h2>
+                        <p>TS / Angular</p>
+                    </div>
+                    <h4>Open</h4>
+                </div>
+                <div className={styles.project} data-hover="Expand">
+                    <img className={styles.imgProjects} src={BlogLaravel} alt="BlogLaravel" />
+                    <div className={styles.textBox}>
+                        <h2>Users Blog</h2>
+                        <p>PHP / Laravel</p>
+                    </div>
+                    <h4>Open</h4>
+                </div>
+            </div>
+        </div>
+        <div className={styles.containerVideos}></div>
+
             </div>
                     <h3 onClick={handleMain} className={styles.up}>
                         Main

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import move from "lodash-move";
+import Hover from 'react-3d-hover';
 import ps from "../../assets/ps.svg";
 import lr from "../../assets/lr.png";
 import pr from "../../assets/pr.webp";
@@ -221,16 +222,26 @@ export default function About({ exitPage, cycleExitPage }) {
                             staggerChildren: 0.6,
                         }}
                     >
-                        <div className={styles.studie1}>
-                            <h3>Full-Stack</h3>
-                            <h4>Bootcamp</h4>
-                            <h5>Upgrade-Hub</h5>
-                        </div>
+                        <Hover
+                            
+                            max={20}
+                        >
+                            <div className={styles.studie1}>
+                                <h3>Full-Stack</h3>
+                                <h4>Bootcamp</h4>
+                                <h5>Upgrade-Hub</h5>
+                            </div>
+                        </Hover>
+                        <Hover
+                            
+                            max={20}
+                        >
                         <div className={styles.studie2}>
                             <h3>Audiovisual</h3>
                             <h4>Higher Degree Course</h4>
                             <h5>Ites</h5>
                         </div>
+                        </Hover>
                     </motion.div>
                 </motion.div>
                 <motion.div className={styles.videosContainer}

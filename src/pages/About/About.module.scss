@@ -192,15 +192,15 @@
         z-index: 3;
         display: grid;
         width: 100%;
-        grid-template-columns: repeat( auto-fit, 60px);     
-        gap: 15px;
+        grid-template-columns: repeat( auto-fit, minmax(60px,100px));          
         justify-content: center;
         align-items:center;
-        margin: 0 auto;
+       
         img{
           height: 60px;
           transition: 0.2s ease-in-out;
           filter:drop-shadow(0 5px 5px rgba(0, 0, 0, 0.281));
+          margin: 0 auto;
           
             &:hover{
               transform: translateY(-10px)
