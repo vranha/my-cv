@@ -1,0 +1,65 @@
+.containerModal{
+    padding-left: 1.25rem; /* 20px */
+    padding-right: 1.25rem; /* 20px */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .divModal{
+        position: absolute;
+        z-index: 100;
+        padding: 1.25rem; /* 20px */
+        background: #6f697e;
+        height: auto;
+        width: 100%;
+        max-width: 28rem; /* 448px */
+        border-radius: 10px;
+        color: white;
+
+        .closeButton{
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: -1rem; /* 16px */
+            margin-right: -1rem; /* 16px */
+            background: white;
+            color:#6f697e;
+            border: 1px solid #6f697e;
+            height: 2rem; /* 32px */
+            width: 2rem; /* 32px */
+            display:block;
+            margin-bottom: 0.5rem; /* 8px */
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    }
+
+    .backgroundModal{
+        background: rgba(0, 0, 0, 0.507);
+        padding-left: 1.25rem; /* 20px */
+        padding-right: 1.25rem; /* 20px */
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+    }
+
+    h1{
+        color: #ffbf35;
+    }
+
+    .texts{
+        p{
+            display:block;
+        }
+    }
+}
