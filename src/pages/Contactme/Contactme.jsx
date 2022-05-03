@@ -112,10 +112,19 @@ export default function Contactme({ exitY, cycleExitY }) {
                     <motion.div className={styles.right} variants={children} >
                     <h1>Contact <strong>me</strong></h1>
                     {!done ? <form ref={form} onSubmit={sendEmail}>
-                        <input type="text" name="user_name" className={styles.user} placeholder="Name" required />
-                        <input type="email" name="user_email" className={styles.user} placeholder="E-mail"required />
-                        <textarea name="message" className={styles.user} cols="30" rows="10" placeholder="Message" required></textarea>
-                        <input type="submit" value="Send" className={styles.button}/>
+                        <div className={styles.inputGroup}>
+                            <input type="text" name="user_name" className={styles.user}  required />
+                            <label className={styles.label} for="user_name">Name</label>
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <input type="email" name="user_email" className={styles.user} required />
+                            <label className={styles.label} for="user_email">E-mail</label>
+                        </div>
+                        <div className={styles.inputGroup}>
+                            <textarea name="message" className={styles.user} cols="30" rows="10"  required></textarea>
+                            <label className={styles.label} for="message">Message</label>
+                        </div>
+                        <input type="submit" value="Send me" className={styles.button}/>
                         <div className={styles.blur} style={{ background: "purple" }}>
                         </div>
                     </form> : <div className={styles.thanks}>

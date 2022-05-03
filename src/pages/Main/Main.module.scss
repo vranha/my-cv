@@ -147,24 +147,74 @@ q {
            width: 35%;
        }
        
-       .download{
-           padding: 8px 16px;
-           border-radius: 15px;
-           font-size:14px;
-           font-weight: bold;
-           border:2px solid #ffbf35;
-           background-color: transparent;
-           color:#ffbf35;
-           cursor: pointer;
-           transition:0.3s ease-in-out;
-           text-decoration: none;
-           z-index: 2221;
-   
-           &:hover{
-               color: #4D5061;
-               background-color:#ffbf35
-           }
+       .download {
+        --width: 140px;
+        --height: 40px;
+        --tooltip-height: 35px;
+        --tooltip-width: 90px;
+        --gap-between-tooltip-to-button: calc(var(--tooltip-height) + 3px);
+        --button-color: #ffbf35;
+        --tooltip-color: #fff;
+        width: var(--width);
+        height: var(--height);
+        background: var(--button-color);
+        position: relative;
+        text-align: center;
+        border-radius: 0.45em;
+        transition:  0.3s;
+        overflow: hidden;
+        border: 2px solid #ffbf35;
        }
+
+       .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+       }
+       
+       .download-wrapper,.text,.icon {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        color: #fff;
+        
+       }
+       
+       .text {
+        top: 0
+       }
+       
+       .text,.icon {
+        transition: top 0.5s;
+       }
+       
+       .icon {
+        color: #ffbf35;
+        top: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+       }
+       
+       .download:hover {
+        background: transparent;
+        border: 2px solid #ffbf35;
+       }
+       
+       .download:hover .text {
+        top: -100%;
+       }
+       
+       .download:hover .icon {
+        top: 0;
+       }
+       
+   
+       
    
        .gitlab{
            transform:scale(2);
@@ -257,6 +307,8 @@ q {
       }
     
 }
+
+
 
 .left{
     position: fixed;

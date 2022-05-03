@@ -105,22 +105,57 @@ justify-content: center;
   .contact{
 
     &__option{
-      background: #6f697e;
+  
       padding: 30px ;
       max-width: 230px;
       border-radius: 1.2rem;
       text-align: center;
       border: 1px solid transparent;
-      transition: 0.3s ease-in-out;
       line-height: 1.3rem;
+      --color: transparent;
+      background-color: #6f697e;
+      position: relative;
+      overflow: hidden;
+      transition: .5s;
+      border: 1px solid transparent;
       color: white;
+      z-index: 1;
+
+      &::before, &::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+        background-color:white;
+        transition: 1s ease;
+       }
+
+       &::before {
+        top: -1em;
+        left: -1em;
+       }
+       
+       &::after {
+        left: calc(100% + 1em);
+        top: calc(100% + 1em);
+       }
+
+       &:hover::before, &:hover::after {
+        height: 410px;
+        width: 410px;
+       }
 
       h4,h5 {
         cursor: default;
+        
       }
-
+      
       &:hover{
-        background: transparent;
+        color: rgb(10, 25, 30);
         border-color: #6f697e;
         box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.253);
         color: black;
@@ -189,7 +224,11 @@ justify-content: center;
      }
    }
 
-   .user{
+   .inputGroup{
+    position: relative;
+  }
+  
+  .user {
     width: 20rem;
     height: 2.5rem;
     padding: 0.6rem;
@@ -199,12 +238,32 @@ justify-content: center;
     font-size: 16px;
     background-color: transparent;
     color:black;
-
-    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: #6f697e;
-      opacity: 1; /* Firefox */
-    }
-  }
+    transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+   
+   }
+   
+   .label {
+    position: absolute;
+    left: 15px;
+    top: -3px;
+    color: #919191;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+   }
+   
+   .user:focus, .user:valid {
+    outline: none;
+    border: 2px solid #6f697e;
+   }
+   
+   .user:focus ~ label, .user:valid ~ label {
+    transform: translateY(-30%) scale(0.8);
+    background-color: #F6FAFB;
+    padding: 0 .3em;
+    color: #6f697e;
+    font-size:17px;
+   }
 
    textarea {
      height: 6rem !important;
@@ -216,9 +275,9 @@ justify-content: center;
    }
 
    .button{
-    padding: 8px 16px;
-    border-radius: 15px;
-    font-size:14px;
+    padding:9px 25px;
+    border-radius: 10px;
+    font-size:15px;
     font-weight: bold;
     border:2px solid #ffbf35;
     background-color: #ffbf35;
@@ -236,7 +295,6 @@ justify-content: center;
     }
    }
 }
-
 
 
 .down{

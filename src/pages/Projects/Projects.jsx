@@ -75,7 +75,7 @@ export default function Projects({exitY, cycleExitY   }) {
             setText3('The administrator has access to lists of orders and reservations to manage.')
             setLink('https://www.google.com/search?q=Cocktel&oq=cocktel&aqs=chrome.0.69i59j46i131i433i512j46i512j0i512l2j0i10i512l2j0i512j46i10i512j0i271.897j0j15&sourceid=chrome&ie=UTF-8')
             setType('React')
-            setThings([])
+            setThings(['Registration and Login', 'Session token', 'E-mail Confirmation and Contact', 'Pay method', 'Geolocalization', 'and more...' ])
         }
         if (project === "MoviesHouse") {
             setModal((moda) => !modal)
@@ -174,7 +174,7 @@ export default function Projects({exitY, cycleExitY   }) {
         </div>
         <div className={styles.containerVideos}></div>
             </motion.div>
-<Modal {...{ modal, setModal, title, text1, text2, text3, link, type, things }}></Modal>
+<Modal {...{ modal, setModal, title, text1, text2, text3, link, type, things, }}></Modal>
                     <h3 onClick={handleMain} className={styles.up}>
                         Main
                     </h3>
