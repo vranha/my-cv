@@ -1,3 +1,5 @@
+@import "../../index.scss";
+
 .containerModal {
     padding-left: 1.25rem; /* 20px */
     padding-right: 1.25rem; /* 20px */
@@ -24,6 +26,12 @@
         // border: 3px solid white;
 
 
+        @include mobile {
+            width: 85vw;
+            height: 95vh;
+            margin-top: 0px;
+        }
+
         .closeButton {
             position: absolute;
             top: 0;
@@ -40,6 +48,15 @@
             border-radius: 50px;
             transition: all 0.3s ease-in-out;
             cursor: pointer;
+
+        .cross{
+            @include mobile {
+                position: relative;
+                bottom:3px;
+                right: 0.5px;
+              
+                }
+        }
         }
     }
 
@@ -55,6 +72,8 @@
         align-items: center;
         top: 0;
         left: 0;
+
+
         
     }
 
@@ -66,9 +85,17 @@
         h1 {
             color: #ffbf35;
             margin-bottom: 20px;
+            @include mobile {
+                margin-bottom: 10px;
+              
+                }
         }
         h3 {
             margin-bottom: 20px;
+            @include mobile {
+            margin-bottom: 10px;
+          
+            }
         }
         
         .infoDiv {
@@ -87,20 +114,46 @@
             padding: 30px 20px 0px;
             margin: 20px;
             
+            @include mobile {
+                grid-template-areas:
+                "things";
+                grid-template-columns: 1fr ;
+                grid-template-rows:  1fr;
+                padding: 0px 20px 0px;
+                margin: 10px;
+                max-height: 55vh;
+            }
+    
+            
             .things{
                 grid-area: things;
                 font-size:23px;
                 margin: 10px auto;
                 color:black;
+                
+                @include mobile {
+                    font-size:19px;
+                  padding: 0;
+                }
 
                 .arrow{
                     position: relative;
                     top:12px;
                     fill:#ffbf35;
+                    
+                    @include mobile {
+                        top:8px;
+                  
+                    }
                 }
 
                 li:first-of-type {
                     margin-top: 30px;
+                    @include mobile {
+                        margin-top: 10px;
+
+                  
+                    }
                 }
                 
                 li{
@@ -112,6 +165,10 @@
                     display: block;
                     position: relative;
                     color:rgba(0, 0, 0, 0.932);
+                    @include mobile {
+                        margin-top: 5px;
+                      
+                        }
                 }
                 
                 li:before {
@@ -151,6 +208,12 @@
                 border-radius: 5px;
                 margin: 20px auto;
                 box-shadow: 0 0 30px rgba(0, 0, 0, 0.466);
+
+                @include mobile {
+                   display: none;
+                   
+                }
+        
             }
 
             .texts {
@@ -174,6 +237,10 @@
                     line-height: 20px;
                     margin-bottom: 15px;
                 }
+
+                @include mobile {
+               display: none
+                }
             }
         }
 
@@ -192,6 +259,11 @@
                 padding: 0;
                 font-size: inherit;
                 font-family: inherit;
+
+                @include mobile {
+                    
+                  
+                    }
                }
                
                button.learnMore {

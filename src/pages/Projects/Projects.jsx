@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
+import Carousel from 'react-bootstrap/Carousel'
 import CocktailsClub from "../../assets/CocktailsClub.webp";
 import MoviesHouse from "../../assets/MoviesHouse.webp";
 import ArcaneProject from "../../assets/ArcaneProject.webp";
@@ -275,7 +275,66 @@ export default function Projects({ exitY, cycleExitY }) {
                      My <strong>Projects</strong>
                                   </motion.h1> 
 
-                               
+                                  <Carousel className={styles.carousel} >
+  <Carousel.Item>
+  <motion.div
+                            variants={base}
+                            className={styles.project}
+                            onClick={() => modalOpener("CocktailsClub")}
+                        >
+                            <img className={styles.imgProjects} src={CocktailsClub} alt="CocktailsClub" />
+                            <div className={styles.textBox}>
+                                <h2>Cocktails Club</h2>
+                                <p>JSX / React</p>
+                            </div>
+                            <h4>Open</h4>
+                        </motion.div>
+  </Carousel.Item>
+  <Carousel.Item>
+  <motion.div
+                            variants={base}
+                            className={styles.project}
+                            onClick={() => modalOpener("MoviesHouse")}
+                        >
+                            <img className={styles.imgProjects} src={MoviesHouse} alt="MoviesHouse" />
+                            <div className={styles.textBox}>
+                                <h2>Movies House</h2>
+                                <p>JSX / React</p>
+                            </div>
+                            <h4>Open</h4>
+                        </motion.div>
+  </Carousel.Item>
+  <Carousel.Item>
+  <motion.div
+                            variants={base}
+                            className={styles.project}
+                            onClick={() => modalOpener("ArcaneProject")}
+                        >
+                            <img className={styles.imgProjects} src={ArcaneProject} alt="ArcaneProject" />
+                            <div className={styles.textBox}>
+                                <h2>Arcane Project</h2>
+                                <p>TS / Angular</p>
+                            </div>
+                            <h4>Open</h4>
+                        </motion.div>
+  </Carousel.Item>
+  <Carousel.Item>
+  <motion.div
+                            variants={base}
+                            className={styles.project}
+                            onClick={() => modalOpener("BlogLaravel")}
+                        >
+                            <img className={styles.imgProjects} src={BlogLaravel} alt="BlogLaravel" />
+                            <div className={styles.textBox}>
+                                <h2>Users Blog</h2>
+                                <p>PHP / Laravel</p>
+                            </div>
+                            <h4>Open</h4>
+                        </motion.div>
+  </Carousel.Item>
+</Carousel>
+<h3 className={styles.take}>Take a <strong>look</strong></h3>
+<h4  className={styles.take}>and <strong>tell me</strong> something</h4>
                                   
                  </div>}
                 <div className={styles.containerVideos}></div>

@@ -52,7 +52,7 @@ export default function Modal({ modal, setModal, title, text1, text2, text3, lin
                         className={styles.divModal}
                     >
                         <button onClick={() => setModal((modal) => !modal)} className={styles.closeButton}>
-                            <ImCross style={{ paddingTop: "4px", paddingLeft: "1px" }}></ImCross>
+                            <ImCross className={styles.cross} style={{ paddingTop: "4px", paddingLeft: "1px" }}></ImCross>
                         </button>
                         <div className={styles.content}>
                           <h1>{title}</h1>
