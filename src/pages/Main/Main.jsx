@@ -96,7 +96,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
             exit={{ x: initialPage, y: initialY }}
             transition={pageTransition}
         >
-            <h3 className={styles.up} onClick={() => handleProjects("contactme")}>
+            <h3 className={styles.up} onClick={() => handleProjects("contactme")} >
                 Contact Me
             </h3>
             <h3 className={styles.left} onClick={() => handleProjects("skills")}>
@@ -267,7 +267,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                     </motion.div>
                     <motion.a
                         variants={children}
-                        transition={{ type: "tween", bounce: 0, duration: 0.2, delay: 1.6 }}
+                        transition={{ type: "tween", bounce: 0, duration: 0.2, delay: 1.8 }}
                         
                         href={CV}
                         download="CV Oriol Arias -- ¡Contratar!"

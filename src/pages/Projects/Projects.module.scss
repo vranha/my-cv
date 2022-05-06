@@ -1,3 +1,6 @@
+@import "../../index.scss";
+
+
 .container {
     display: flex;
     justify-content: center;
@@ -64,6 +67,12 @@
     margin-top: 60px;
     background: linear-gradient(rgba(255, 255, 255, 0.527), rgba(255, 255, 255, 0.534)), url(../../assets/4853433.jpg);
     background-position: left bottom;
+
+    @include mobile {
+      height: 85vh;
+      width: 85vw;
+      margin-top: 30px;
+  }
 
     h1 {
 
@@ -194,6 +203,7 @@
     background-color: white;
     cursor: pointer;
     transition: 0.3s ease-in-out;
+    z-index: -1;
 
     &:hover {
         color: #ffbf35;
@@ -210,4 +220,10 @@
         margin-left: 60px;
         transition: 0s ease-in-out;
     }
+
+    @include mobile {
+      top: 4%;
+      padding: 10px 30px;
+      transform:translate(-50%, -50%) scale(0.8);
+  }
 }

@@ -1,3 +1,5 @@
+@import "../../index.scss";
+
 
 .container{
     display: flex;
@@ -25,11 +27,22 @@
     right: 50%;
     transform: translate(50%, -50%);
     z-index:3;
+    font-size:32px;
+    @include mobile {
+      font-size:22px;
+     width: 100%;
+  }
 
     strong{
       color:#f3b52f  ;
     }
   }
+
+  @include mobile {
+    height: 85vh;
+    width: 85vw;
+    margin-bottom: 30px;
+}
 
 }
 
@@ -91,16 +104,35 @@
 .center{
   padding: 0 3rem 0 3rem;
   display: grid;
+  grid-template-areas:
+  "left right"
+  ;
   grid-template-columns: 30% 58%;
+  grid-template-rows: 100%;
   height: 100%;
   width: 100%;
+  
+  @include mobile {
+    grid-template-areas:
+    "right "
+    "left"
+    ;
+    grid-template-columns: 100%;
+    grid-template-rows: 70% 30%;
+}
 }
 
 .left{
+  grid-area: left;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-justify-content: center;
+    justify-content: center;
+    
+    @include mobile {
+      flex-direction: row;
+      gap: 0.2rem;
+}
 
   .contact{
 
@@ -108,10 +140,11 @@ justify-content: center;
   
       padding: 30px ;
       max-width: 230px;
+      min-width: 180px;
       border-radius: 1.2rem;
       text-align: center;
       border: 1px solid transparent;
-      line-height: 1.3rem;
+      line-height: 1.30rem;
       --color: transparent;
       background-color: #6f697e;
       position: relative;
@@ -120,6 +153,19 @@ justify-content: center;
       border: 1px solid transparent;
       color: white;
       z-index: 1;
+      
+      @include mobile {
+        flex-direction: row;
+        max-width: 230px;
+        min-width: 90px;
+        padding: 10px ;
+        line-height: 1rem;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+       }
 
       &::before, &::after {
         content: '';
@@ -151,8 +197,19 @@ justify-content: center;
 
       h4,h5 {
         cursor: default;
+
+        @include mobile {
+          width: 90px;
+          word-wrap: break-word;
+         }
         
       }
+
+      @include mobile {
+        h4{
+          display: none;
+        }
+       }
       
       &:hover{
         color: rgb(10, 25, 30);
@@ -194,6 +251,7 @@ justify-content: center;
 
 
 .right{
+  grid-area: right;
    margin-top: 40px;
    display: flex;
    justify-content: center;
@@ -201,18 +259,40 @@ justify-content: center;
    position: relative;
    left: 10%;
    flex: 1;
+   
+   @include mobile {
+     margin-top: 20px;
+    left: 0%;
+   }
 
    h1{
      color: black;
    }
 
+   .thanks{
+    @include mobile {
+    color: red;
+    }
+  }
    form, .thanks{
      display: flex;
      flex-direction: column;
      gap: 2rem;
      align-items: center;
      margin-top: 150px;
-     color:white;
+     color:black;
+     
+     @include mobile {
+       transform: scale(0.8);
+       margin-top: 50px;
+       
+      
+    }
+
+    
+
+
+
 
      span{
        color:#ffbf35;
@@ -223,6 +303,13 @@ justify-content: center;
        text-decoration-color: #ffbf35;
      }
    }
+
+   .thanks{
+    @include mobile {
+      transform: scale(0.9);
+      margin-top: 120px;
+    }
+  }
 
    .inputGroup{
     position: relative;
@@ -332,4 +419,10 @@ justify-content: center;
     margin-left: 60px;
     transition:0s ease-in-out;
   }
+
+  @include mobile {
+    bottom: -2.3%;
+    padding: 10px 30px;
+    transform:translate(-50%, -50%) scale(0.8);
+}
 }

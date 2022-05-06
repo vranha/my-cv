@@ -1,3 +1,6 @@
+@import "../../index.scss";
+
+
 .container{
     display: flex;
     justify-content: center;
@@ -66,6 +69,13 @@
     margin-right: 60px;
     background: linear-gradient(rgba(255, 255, 255, 0.527), rgba(255, 255, 255, 0.534)), url(../../assets/4853433.jpg);
     background-position: left;
+
+    @include mobile {
+        height: 90vh;
+        width: 80vw;
+        margin-right: 30px;
+   
+    }
 }
 .center{
    position: relative;
@@ -77,6 +87,11 @@
         cursor: default;
         margin-top: 20px;
         color: black;
+        
+    @include mobile {
+        font-size:30px;
+   
+    }
 
        strong{
            display: block;
@@ -88,7 +103,12 @@
     position: relative;
     top: 50px;
     right: 20vw;
-  
+
+    @include mobile {
+        transform:scale(0.6);
+        top: 10px;
+        right: 0vw;
+    }
 
     .basicsHtml{
         height:80px;
@@ -142,6 +162,9 @@
      top:378px;
      height: 150px;
      pointer-events: none;
+     @include mobile {
+        display: none;
+    }
 
  }
  .atributesContainerPrev{
@@ -151,6 +174,13 @@
     width: 0px;
     height: 0px;
     pointer-events: none;
+    
+    @include mobile {
+        transform: scale(1.2);
+        top: 700px;
+        left: 0px;
+        
+    }
 
 
     h3{
@@ -176,6 +206,11 @@
     left: 30vw;
     height: 500px;
 
+    @include mobile {
+        transform:scale(0.6) translate(calc(-5% - 23vw));
+        top: 140px;
+        
+    }
 
     .devReact{
         cursor: pointer;
@@ -306,6 +341,11 @@
         position: absolute;
         top: 210px;
         left:26.5vw;
+        @include mobile {
+            transform:scale(0.6);
+            top: 270px;
+            left: calc(5vw - -13px);
+        }
 
         &Title{
             position: relative;
@@ -340,8 +380,12 @@
             top: calc(12vh + 160px);
             left: calc(30vw - 150px);
             cursor:default;
-
-          
+            
+            @include mobile {
+                transform:scale(0.6);
+                top: calc(5vh + 20px);
+                left: calc(50vw - 150px);
+            }
         
             .basicsHtmlName{
                 position: relative;
@@ -432,6 +476,12 @@
                 margin-top: 60px;
                 transition:0s ease-in-out;
               }
+
+              @include mobile {
+                right: -5%;
+                padding: 20px 10px;
+                transform:translate(-50%, -50%) scale(0.8);
+            }
         }
 
         

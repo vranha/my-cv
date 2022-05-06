@@ -58,7 +58,7 @@ const myHtml = {
     Php: "Php",
     Laravel: "Laravel",
     Bootstrap: "Bootstrap",
-    Framer: "Framer Motion",
+    Framer: "Fr. Motion",
 };
 
 export default function Skills({ exitPage, cycleExitPage }) {

@@ -1,9 +1,13 @@
+@import "../../index.scss";
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
+
+
 }
 
 .container::before {
@@ -71,6 +75,18 @@
     background-position: right;
     background-size: 200%;
 
+    @include mobile {
+      height: 90vh;
+      width: 80vw;
+      margin-left: 30px;
+      grid-template-areas:
+        "exp"
+        "stu"
+        "vid";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
     .studiesContainer {
         grid-area: stu;
         display: flex;
@@ -78,9 +94,21 @@
         justify-content: start;
         align-items: center;
         gap: 50px;
+        
+        @include mobile {
+          gap: 10px;
+          transform: scale(0.7);
+         
+      }
         .studies {
             z-index: 3;
             margin-top: 40px;
+            
+            @include mobile {
+              margin-top: -70px;
+              
+             
+          }
             strong {
               color: #f3b52f;
             }
@@ -129,9 +157,18 @@
 
     .experienceContainer {
         grid-area: exp;
+        @include mobile {
+          transform: scale(0.7);
+          margin-top: -15px;
+      }
         .experience {
             z-index: 3;
             margin-top: 40px;
+            
+            @include mobile {
+              margin-top: 0px;
+            
+          }
             strong {
                 color: #f3b52f;
             }
@@ -142,6 +179,10 @@
             width: 280px;
             height: 170px;
             margin: 100px auto;
+            @include mobile {
+              margin: 50px auto 0px;
+            
+          }
         }
 
         .cardStyle {
@@ -184,9 +225,19 @@
         flex-direction: column;
         // justify-content: center;
         align-items: center;
+
+        @include mobile {
+          transform: scale(0.7);
+          margin-top: -40px; 
+         
+      }
         .videosTitle{
           width: 100%;
-          margin-bottom: 30px;          
+          
+          @include mobile {
+            margin-bottom: 10px; 
+           
+        }
         }
         .videos {
         z-index: 3;
@@ -195,6 +246,12 @@
         grid-template-columns: repeat( auto-fit, minmax(60px,100px));          
         justify-content: center;
         align-items:center;
+        
+        @include mobile {
+          grid-template-columns: repeat( auto-fit, minmax(60px,60px));          
+         gap:10px;
+         
+      }
        
         img{
           height: 60px;
@@ -245,5 +302,11 @@
         content: "⬅";
         margin-top: 60px;
         transition: 0s ease-in-out;
+    }
+
+     @include mobile {
+        left: 6%;
+        padding: 20px 10px;
+        transform:translate(-50%, -50%) scale(0.8);
     }
 }

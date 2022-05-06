@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./Modal.module.scss";
 import { ImCross } from "react-icons/im";
+import { BsArrow90DegDown } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import CocktailsClub from "../../assets/CocktailsClubImage.png";
 import MoviesHouse from "../../assets/MoviesHouseImage.png";
@@ -56,12 +57,21 @@ export default function Modal({ modal, setModal, title, text1, text2, text3, lin
                         <div className={styles.content}>
                           <h1>{title}</h1>
                           <h3>Framework/Library: <span style={{ color: color}}>{type}</span></h3>
-                          <div className={styles.infoDiv}>
-                            <img src={img} alt="" />
-                            <ul className={styles.things}>Here you can see...
+                          <motion.div className={styles.infoDiv} initial={{ scale: 1.2 }}
+                        animate={{
+                            scale: 1,
+                            
+                        }}
+                        exit={{
+                            scale: 1,
+                            
+                        }}
+                        transition={{ type: "spring", bounce: 0, duration: 2,  }} >
+                            <img src={img} alt="img project" />
+                            <ul className={styles.things}><BsArrow90DegDown className={styles.arrow} /> Here you can see...
                               {things.map((thing) => {
                                 return (
-                                  <li>
+                                  <li key={thing}>
                                     {thing}
                                   </li>
                                 )
@@ -73,14 +83,19 @@ export default function Modal({ modal, setModal, title, text1, text2, text3, lin
                                 {text3 ? <p>{text3}</p> : ''}
                             </div>
                             
-                          </div>
+                          </motion.div>
                           <a href={link}  target="_blank" rel="noreferrer" >
-                            <button className={styles.learnMore}>
+                            <motion.button className={styles.learnMore}
+                           whileInView={{
+                            rotate: [0,5, -5,0],
+                            ease: "backInOut",
+                            transition: { duration: 2, repeat: Infinity, delay: 1, repeatDelay: 1},
+                        }}>
                               <span className={styles.circle} aria-hidden="true">
                               <span className={`${styles.icon} ${styles.arrow}`}></span>
                               </span>
                               <span className={styles.buttonText}>OPEN IN A NEW TAB</span>
-                            </button>
+                            </motion.button>
                           </a>
                         </div>
                     </motion.div>
