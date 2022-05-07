@@ -124,7 +124,28 @@
   }
   &:hover .textBox{
     opacity: 0;
+
+    @include mobile {
+      opacity: 1;
+   }
   }
+  &:hover .textBox p{
+    
+@include mobile {
+   opacity: 0;
+}
+  }
+  
+  
+
+  @include mobile {
+    
+    max-height: 160px;
+    max-width: 260px;
+    min-height: 160px;
+    min-width: 260px;
+    
+}
  
 
   h4 {
@@ -178,7 +199,7 @@
       background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.678) 0%,  rgba(0, 0, 0, 0.568) 40%,#9b8ebd8e 100%);
       opacity: 1;
       transition:  0.3s ease-in-out;
-      cursor: pointer;  
+      cursor: default;  
       letter-spacing: 2px;
       h2{
         color: #f3b52f;
@@ -193,14 +214,54 @@
       
     }
 }
+.containerMobile{
 
-.take{
-  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 80vh;
+
+  .take{
+  // margin-top: 40px;
 
   strong{
     color:#ffbf35;
   }
 }
+}
+
+
+.containerArrows{
+  height: 0px;
+
+  .left{
+  position: relative;
+  bottom:100px;
+  right:90px;
+  fill: rgb(212, 212, 212);
+  font-size: 40px;
+  z-index: 9999;
+  transition: 0.2s ease-in-out;
+}
+.right{
+  position: relative;
+  bottom:100px;
+  left:90px;
+  fill: rgb(212, 212, 212);
+  font-size: 40px;
+  z-index: 9999;
+  transition: 0.2s ease-in-out;
+}
+
+.left, .right {
+
+  &:hover {
+    fill:#ffbf35;
+    cursor: pointer;
+  }
+}
+}
+
 
 .up {
   position: fixed;

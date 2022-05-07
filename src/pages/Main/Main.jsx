@@ -273,7 +273,7 @@ export default function Main({ exitPage, cycleExitPage, exitY, cycleExitY }) {
                         download="CV Oriol Arias -- ¡Contratar!"
                     >
                         <motion.div 
-                        className={styles.download}  data-tooltip="Size: 460Kb">
+                        className={styles.download}>
                     <div className={styles.downloadwrapper}>
                     <div className={styles.text}>Download CV</div>
                         <span className={styles.icon}>

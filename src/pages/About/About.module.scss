@@ -233,6 +233,7 @@
       }
         .videosTitle{
           width: 100%;
+          margin-bottom: 20px; 
           
           @include mobile {
             margin-bottom: 10px; 
