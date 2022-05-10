@@ -340,10 +340,10 @@
 .centerDev{
         position: absolute;
         top: 210px;
-        left:26.5vw;
+        left: calc(30vw - 50px);
         @include mobile {
             transform:scale(0.6);
-            top: 270px;
+            top: 273px;
             left: calc(5vw - -13px);
         }
 
